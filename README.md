@@ -11,16 +11,10 @@
     <a href="https://itunes.apple.com/"><img src="https://raw.finnwea.com/shield/?firstText=Platform&secondText=MacOS%20(10.15%20or%20higher)" /></a>
     <a href="https://github.com/raivo-otp/macos-receiver/releases"><img src="https://raw.finnwea.com/shield/?typeKey=SemverVersion&typeValue0=raivo-otp&typeValue1=macos-receiver&typeValue2=master&typeValue4=Release&cache=3"></a>
     <br/>
-    <b>A MacOS TabBar (StatusBar) application that securely receives one-time passwords (OTPs) that you tapped in Raivo for iOS</b>
+    <b>A MacOS TabBar (StatusBar) application that securely receives one-time passwords that you tapped in Raivo for iOS</b>
     <br/>
     <sup>Built by <a href="https://www.linkedin.com/in/tijme/">Tijme Gommers</a> – Buy me a coffee via <a href="https://www.paypal.me/tijmegommers">PayPal</a></sup>
     <br/>
-</p>
-
-<p align="center">
-    <img src="#todo" width="280">
-    <img src="#todo" width="280">
-    <img src="#todo" width="280">
 </p>
 
 ## Features
@@ -29,30 +23,6 @@
 * It's fast (native, built in Swift 5)
 * It's secure (see the [security policy](https://github.com/raivo-otp/macos-receiver/blob/master/SECURITY.md) for more information)
 * It's open-source (check the [contribution policy](https://github.com/raivo-otp/macos-receiver/blob/master/CONTRIBUTING.md))
-
-## Icons
-
-<p align="center">
-    <img src="https://raw.githubusercontent.com/raivo-otp/issuer-icons/master/vectors/reddit/reddit-alien.svg?sanitize=true" width="75" />
-    <img src="https://raw.githubusercontent.com/raivo-otp/issuer-icons/master/vectors/bitbucket/bitbucket.svg?sanitize=true" width="75" />
-    <img src="https://raw.githubusercontent.com/raivo-otp/issuer-icons/master/vectors/google/google.svg?sanitize=true" width="75" /> 
-    <img src="https://raw.githubusercontent.com/raivo-otp/issuer-icons/master/vectors/whatsapp/whatsapp.svg?sanitize=true" width="75" />
-    <img src="https://raw.githubusercontent.com/raivo-otp/issuer-icons/master/vectors/amazon/amazon.svg?sanitize=true" width="75" /> 
-    <img src="https://raw.githubusercontent.com/raivo-otp/issuer-icons/master/vectors/atlassian/atlassian.svg?sanitize=true" width="75" />
-    <img src="https://raw.githubusercontent.com/raivo-otp/issuer-icons/master/vectors/spotify/spotify.svg?sanitize=true" width="75" />
-    <img src="https://raw.githubusercontent.com/raivo-otp/issuer-icons/master/vectors/slack/slack.svg?sanitize=true" width="75" />
-    <img src="https://raw.githubusercontent.com/raivo-otp/issuer-icons/master/vectors/facebook-messenger/facebook-messenger.svg?sanitize=true" width="75" />
-    <img src="https://raw.githubusercontent.com/raivo-otp/issuer-icons/master/vectors/gitlab/gitlab.svg?sanitize=true" width="75" />
-</p>
-
-
-Raivo enables you to add your own icons to OTPs. You can add your own icon via the [Raivo icon repository](https://github.com/raivo-otp/issuer-icons). Make sure to read the contribution guidelines before making a pull request.
-
-## Migrating
-
-The following migration guides walk you through the process of migrating from your existing OTP app to Raivo OTP.
-
-* [Migrating from **Authy** to Raivo OTP](https://tij.me/blog/migrating-your-one-time-passwords-from-authy-to-raivo-otp/)
 
 ## Issues
 
