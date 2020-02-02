@@ -26,16 +26,16 @@
 
 ## Issues
 
-Issues or new features can be reported via the [issue tracker](https://github.com/raivo-otp/ios-application/issues). Please make sure your issue or feature has not yet been reported by anyone else before submitting a new one.
+Issues or new features can be reported via the [issue tracker](https://github.com/raivo-otp/macos-receiver/issues). Please make sure your issue or feature has not yet been reported by anyone else before submitting a new one.
 
 ## Security
 
-If you discover a security vulnerability, we would like to know about it so we can take steps to address it as quickly as possible. Please refer to the [security policy](https://github.com/raivo-otp/ios-application/blob/master/SECURITY.md) for information on reporting vulnerabilities.
+If you discover a security vulnerability, we would like to know about it so we can take steps to address it as quickly as possible. Please refer to the [security policy](https://github.com/raivo-otp/macos-receiver/blob/master/SECURITY.md) for information on reporting vulnerabilities.
 
 ## Privacy
 
-Raivo does not collect personally identifiable information in any way. Please refer to the [privacy policy](https://github.com/raivo-otp/ios-application/blob/master/PRIVACY.md) for information.
+Raivo does not collect personally identifiable information in any way. Please refer to the [privacy policy](https://github.com/raivo-otp/macos-receiver/blob/master/PRIVACY.md) for information.
 
 ## License
 
-Copyright (c) 2019 Tijme Gommers. All rights reserved. View [LICENSE.md](https://github.com/raivo-otp/ios-application/blob/master/LICENSE.md) for the full license.
+Copyright (c) 2019 Tijme Gommers. All rights reserved. View [LICENSE.md](https://github.com/raivo-otp/macos-receiver/blob/master/LICENSE.md) for the full license.
