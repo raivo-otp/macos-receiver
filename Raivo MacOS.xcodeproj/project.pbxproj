@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		700234AF23E73D37002110CD /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 700234AD23E73D37002110CD /* LaunchAtLogin.framework */; };
+		700234B023E73D37002110CD /* LaunchAtLogin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 700234AD23E73D37002110CD /* LaunchAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		700234B123E73D37002110CD /* Preferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 700234AE23E73D37002110CD /* Preferences.framework */; };
+		700234B223E73D37002110CD /* Preferences.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 700234AE23E73D37002110CD /* Preferences.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7069B41D23E631BC0045B0F3 /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B41C23E631BC0045B0F3 /* ApplicationDelegate.swift */; };
+		7069B42123E631BE0045B0F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7069B42023E631BE0045B0F3 /* Assets.xcassets */; };
+		7069B42423E631BE0045B0F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7069B42323E631BE0045B0F3 /* Preview Assets.xcassets */; };
+		7069B43523E6DF9E0045B0F3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43423E6DF9E0045B0F3 /* main.swift */; };
+		7069B43723E6E02B0045B0F3 /* ApplicationPrinciple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43623E6E02B0045B0F3 /* ApplicationPrinciple.swift */; };
+		7069B43923E6E26F0045B0F3 /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43823E6E26F0045B0F3 /* GeneralView.swift */; };
+		7069B43B23E6E2790045B0F3 /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43A23E6E2790045B0F3 /* DevicesView.swift */; };
+		7069B43E23E6E39D0045B0F3 /* StatusBarFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43D23E6E39D0045B0F3 /* StatusBarFeature.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		700234B323E73D37002110CD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				700234B023E73D37002110CD /* LaunchAtLogin.framework in Embed Frameworks */,
+				700234B223E73D37002110CD /* Preferences.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		700234AB23E73B5E002110CD /* Preferences.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Preferences.framework.dSYM; path = Carthage/Build/Mac/Preferences.framework.dSYM; sourceTree = "<group>"; };
+		700234AC23E73B5E002110CD /* LaunchAtLogin.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = LaunchAtLogin.framework.dSYM; path = Carthage/Build/Mac/LaunchAtLogin.framework.dSYM; sourceTree = "<group>"; };
+		700234AD23E73D37002110CD /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
+		700234AE23E73D37002110CD /* Preferences.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Preferences.framework; path = Carthage/Build/Mac/Preferences.framework; sourceTree = "<group>"; };
+		7069B41923E631BC0045B0F3 /* Raivo MacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Raivo MacOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7069B41C23E631BC0045B0F3 /* ApplicationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegate.swift; sourceTree = "<group>"; };
+		7069B42023E631BE0045B0F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7069B42323E631BE0045B0F3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7069B42623E631BE0045B0F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7069B42823E631BE0045B0F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7069B42923E631BE0045B0F3 /* Raivo_MacOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Raivo_MacOS.entitlements; sourceTree = "<group>"; };
+		7069B43423E6DF9E0045B0F3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		7069B43623E6E02B0045B0F3 /* ApplicationPrinciple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationPrinciple.swift; sourceTree = "<group>"; };
+		7069B43823E6E26F0045B0F3 /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
+		7069B43A23E6E2790045B0F3 /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
+		7069B43D23E6E39D0045B0F3 /* StatusBarFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarFeature.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7069B41623E631BC0045B0F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				700234AF23E73D37002110CD /* LaunchAtLogin.framework in Frameworks */,
+				700234B123E73D37002110CD /* Preferences.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7069B41023E631BC0045B0F3 = {
+			isa = PBXGroup;
+			children = (
+				7069B41B23E631BC0045B0F3 /* Raivo MacOS */,
+				7069B41A23E631BC0045B0F3 /* Products */,
+				9AF60B5A059A525133FDC1EE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7069B41A23E631BC0045B0F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7069B41923E631BC0045B0F3 /* Raivo MacOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7069B41B23E631BC0045B0F3 /* Raivo MacOS */ = {
+			isa = PBXGroup;
+			children = (
+				7069B42923E631BE0045B0F3 /* Raivo_MacOS.entitlements */,
+				7069B43C23E6E3780045B0F3 /* Features */,
+				7069B42223E631BE0045B0F3 /* Preview Content */,
+				7069B43223E6DF4C0045B0F3 /* Supporting */,
+				7069B43323E6DF750045B0F3 /* Storyboards */,
+				7069B43123E6DF460045B0F3 /* Views */,
+				7069B43623E6E02B0045B0F3 /* ApplicationPrinciple.swift */,
+				7069B41C23E631BC0045B0F3 /* ApplicationDelegate.swift */,
+				7069B43423E6DF9E0045B0F3 /* main.swift */,
+			);
+			path = "Raivo MacOS";
+			sourceTree = "<group>";
+		};
+		7069B42223E631BE0045B0F3 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7069B42323E631BE0045B0F3 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7069B43123E6DF460045B0F3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7069B43823E6E26F0045B0F3 /* GeneralView.swift */,
+				7069B43A23E6E2790045B0F3 /* DevicesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7069B43223E6DF4C0045B0F3 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				7069B42023E631BE0045B0F3 /* Assets.xcassets */,
+				7069B42823E631BE0045B0F3 /* Info.plist */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		7069B43323E6DF750045B0F3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7069B42523E631BE0045B0F3 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		7069B43C23E6E3780045B0F3 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				7069B43D23E6E39D0045B0F3 /* StatusBarFeature.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		9AF60B5A059A525133FDC1EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				700234AD23E73D37002110CD /* LaunchAtLogin.framework */,
+				700234AE23E73D37002110CD /* Preferences.framework */,
+				700234AC23E73B5E002110CD /* LaunchAtLogin.framework.dSYM */,
+				700234AB23E73B5E002110CD /* Preferences.framework.dSYM */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7069B41823E631BC0045B0F3 /* Raivo MacOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7069B42C23E631BE0045B0F3 /* Build configuration list for PBXNativeTarget "Raivo MacOS" */;
+			buildPhases = (
+				7069B41523E631BC0045B0F3 /* Sources */,
+				7069B41623E631BC0045B0F3 /* Frameworks */,
+				7069B41723E631BC0045B0F3 /* Resources */,
+				700234B323E73D37002110CD /* Embed Frameworks */,
+				701E2F2B23E742D200457C9D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Raivo MacOS";
+			productName = "Raivo MacOS";
+			productReference = 7069B41923E631BC0045B0F3 /* Raivo MacOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7069B41123E631BC0045B0F3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Tijme Gommers";
+				TargetAttributes = {
+					7069B41823E631BC0045B0F3 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 7069B41423E631BC0045B0F3 /* Build configuration list for PBXProject "Raivo MacOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7069B41023E631BC0045B0F3;
+			productRefGroup = 7069B41A23E631BC0045B0F3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7069B41823E631BC0045B0F3 /* Raivo MacOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7069B41723E631BC0045B0F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7069B42423E631BE0045B0F3 /* Preview Assets.xcassets in Resources */,
+				7069B42123E631BE0045B0F3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		701E2F2B23E742D200457C9D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7069B41523E631BC0045B0F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7069B41D23E631BC0045B0F3 /* ApplicationDelegate.swift in Sources */,
+				7069B43923E6E26F0045B0F3 /* GeneralView.swift in Sources */,
+				7069B43E23E6E39D0045B0F3 /* StatusBarFeature.swift in Sources */,
+				7069B43523E6DF9E0045B0F3 /* main.swift in Sources */,
+				7069B43B23E6E2790045B0F3 /* DevicesView.swift in Sources */,
+				7069B43723E6E02B0045B0F3 /* ApplicationPrinciple.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7069B42523E631BE0045B0F3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7069B42623E631BE0045B0F3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7069B42A23E631BE0045B0F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7069B42B23E631BE0045B0F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		7069B42D23E631BE0045B0F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Raivo MacOS/Raivo_MacOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Raivo MacOS/Preview Content\"";
+				DEVELOPMENT_TEAM = 564B4ETY69;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = "Raivo MacOS/Supporting/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.tij.Raivo-MacOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7069B42E23E631BE0045B0F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Raivo MacOS/Raivo_MacOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Raivo MacOS/Preview Content\"";
+				DEVELOPMENT_TEAM = 564B4ETY69;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = "Raivo MacOS/Supporting/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.tij.Raivo-MacOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7069B41423E631BC0045B0F3 /* Build configuration list for PBXProject "Raivo MacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7069B42A23E631BE0045B0F3 /* Debug */,
+				7069B42B23E631BE0045B0F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7069B42C23E631BE0045B0F3 /* Build configuration list for PBXNativeTarget "Raivo MacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7069B42D23E631BE0045B0F3 /* Debug */,
+				7069B42E23E631BE0045B0F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7069B41123E631BC0045B0F3 /* Project object */;
+}
