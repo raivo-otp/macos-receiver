@@ -15,7 +15,7 @@
 		7069B42123E631BE0045B0F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7069B42023E631BE0045B0F3 /* Assets.xcassets */; };
 		7069B42423E631BE0045B0F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7069B42323E631BE0045B0F3 /* Preview Assets.xcassets */; };
 		7069B43523E6DF9E0045B0F3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43423E6DF9E0045B0F3 /* main.swift */; };
-		7069B43723E6E02B0045B0F3 /* ApplicationPrinciple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43623E6E02B0045B0F3 /* ApplicationPrinciple.swift */; };
+		7069B43723E6E02B0045B0F3 /* ApplicationPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43623E6E02B0045B0F3 /* ApplicationPrincipal.swift */; };
 		7069B43923E6E26F0045B0F3 /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43823E6E26F0045B0F3 /* GeneralView.swift */; };
 		7069B43B23E6E2790045B0F3 /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43A23E6E2790045B0F3 /* DevicesView.swift */; };
 		7069B43E23E6E39D0045B0F3 /* StatusBarFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43D23E6E39D0045B0F3 /* StatusBarFeature.swift */; };
@@ -49,7 +49,7 @@
 		7069B42823E631BE0045B0F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7069B42923E631BE0045B0F3 /* Raivo_MacOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Raivo_MacOS.entitlements; sourceTree = "<group>"; };
 		7069B43423E6DF9E0045B0F3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		7069B43623E6E02B0045B0F3 /* ApplicationPrinciple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationPrinciple.swift; sourceTree = "<group>"; };
+		7069B43623E6E02B0045B0F3 /* ApplicationPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationPrincipal.swift; sourceTree = "<group>"; };
 		7069B43823E6E26F0045B0F3 /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		7069B43A23E6E2790045B0F3 /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
 		7069B43D23E6E39D0045B0F3 /* StatusBarFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarFeature.swift; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 				7069B43223E6DF4C0045B0F3 /* Supporting */,
 				7069B43323E6DF750045B0F3 /* Storyboards */,
 				7069B43123E6DF460045B0F3 /* Views */,
-				7069B43623E6E02B0045B0F3 /* ApplicationPrinciple.swift */,
+				7069B43623E6E02B0045B0F3 /* ApplicationPrincipal.swift */,
 				7069B41C23E631BC0045B0F3 /* ApplicationDelegate.swift */,
 				7069B43423E6DF9E0045B0F3 /* main.swift */,
 			);
@@ -251,7 +251,7 @@
 				7069B43E23E6E39D0045B0F3 /* StatusBarFeature.swift in Sources */,
 				7069B43523E6DF9E0045B0F3 /* main.swift in Sources */,
 				7069B43B23E6E2790045B0F3 /* DevicesView.swift in Sources */,
-				7069B43723E6E02B0045B0F3 /* ApplicationPrinciple.swift in Sources */,
+				7069B43723E6E02B0045B0F3 /* ApplicationPrincipal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  ApplicationPrinciple.swift
+//  ApplicationPrincipal.swift
 //  Raivo MacOS
 //
 //  Created by Tijme Gommers on 02/02/2020.
@@ -9,7 +9,14 @@
 import Foundation
 import AppKit
 
-class ApplicationPrinciple: NSApplication {
+/// Get the Application Principal (shared `UIApplication` class).
+///
+/// - Returns: The application principal singleton instance
+func getAppPrincipal() -> ApplicationPrincipal {
+    return (ApplicationPrincipal.shared as! ApplicationPrincipal)
+}
+
+class ApplicationPrincipal: NSApplication {
     
     let strongDelegate = ApplicationDelegate()
     
@@ -22,5 +29,5 @@ class ApplicationPrinciple: NSApplication {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+        
 }

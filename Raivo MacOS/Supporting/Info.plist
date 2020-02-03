@@ -29,7 +29,7 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2020 Tijme Gommers. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
-	<string>$(PRODUCT_MODULE_NAME).ApplicationPrinciple</string>
+	<string>$(PRODUCT_MODULE_NAME).ApplicationPrincipal</string>
 	<key>NSSupportsAutomaticTermination</key>
 	<true/>
 	<key>NSSupportsSuddenTermination</key>

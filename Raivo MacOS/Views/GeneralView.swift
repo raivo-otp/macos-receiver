@@ -11,37 +11,41 @@ import SwiftUI
 import Preferences
 import LaunchAtLogin
 
-func GeneralPreferencePane() -> PreferencePane {
-    return PreferencePaneHostingController(preferencePaneView: GeneralView())
-}
-
 struct GeneralView: View, PreferencePaneView {
-    
-    let contentWidth: CGFloat = 450.0
-    
+
     let preferencePaneIdentifier: PreferencePaneIdentifier = .general
     
     let preferencePaneTitle: String = "General"
     
     let toolbarItemIcon: NSImage = NSImage(named: NSImage.userAccountsName)!
+    
+    @State var launchOnLogin = LaunchAtLogin.isEnabled {
+        didSet {
+            LaunchAtLogin.isEnabled = launchOnLogin
+        }
+    }
 
     var body: some View {
-        Text("Raivo for MacOS: " + isEnabled())
-        .frame(minWidth: contentWidth, maxWidth: nil, minHeight: 300, maxHeight: nil)
-        .font(.largeTitle)
+        VStack (alignment: .leading, spacing: 5) {
+            VStack (alignment: .leading, spacing: 0) {
+                Toggle(isOn: $launchOnLogin) {
+                    Text("Launch at login").padding(4)
+                }
+                Text("Automatically opens the app when you sign in to your Mac.").foregroundColor(.gray)
+            }
+            .padding()
+        }
+        .frame(minWidth: 450, alignment: .topLeading)
     }
     
-    func isEnabled() -> String {
-        if LaunchAtLogin.isEnabled {
-            return "Yes"
-        }
-        
-        return "No"
-    }
 }
 
+#if DEBUG
 struct GeneralView_Previews: PreviewProvider {
+    
     static var previews: some View {
         GeneralView()
     }
+    
 }
+#endif

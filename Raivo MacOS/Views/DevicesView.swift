@@ -10,29 +10,29 @@ import Cocoa
 import SwiftUI
 import Preferences
 
-func DevicesPreferencePane() -> PreferencePane {
-    return PreferencePaneHostingController(preferencePaneView: DevicesView())
-}
-
 struct DevicesView: View, PreferencePaneView {
-    
-    let contentWidth: CGFloat = 450.0
     
     let preferencePaneIdentifier: PreferencePaneIdentifier = .general
     
-    let preferencePaneTitle: String = "Devices"
+    let preferencePaneTitle: String = "QR code"
     
     let toolbarItemIcon: NSImage = NSImage(named: NSImage.userAccountsName)!
-
+    
     var body: some View {
-        Text("Devices")
-        .frame(minWidth: contentWidth, maxWidth: nil, minHeight: 300, maxHeight: nil)
-        .font(.largeTitle)
+        VStack (alignment: .leading, spacing: 5) {
+            Text("Testing")
+        }
+        .frame(minWidth: 450, alignment: .topLeading)
     }
+    
 }
 
+#if DEBUG
 struct DevicesView_Previews: PreviewProvider {
+    
     static var previews: some View {
         DevicesView()
     }
+    
 }
+#endif

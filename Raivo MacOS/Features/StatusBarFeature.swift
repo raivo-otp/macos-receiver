@@ -6,21 +6,82 @@
 //  Copyright © 2020 Tijme Gommers. All rights reserved.
 //
 
-import Foundation
+import Cocoa
+import Preferences
 
-class StatusBarFeature {
+extension PreferencePane.Identifier {
+    static let general = Identifier("general")
+    static let devices = Identifier("devices")
+}
+
+class StatusBarFeature: NSObject, NSMenuDelegate, NSMenuItemValidation {
     
+    lazy var preferences: [PreferencePane] = [
+        PreferencePaneHostingController(preferencePaneView: GeneralView()),
+        PreferencePaneHostingController(preferencePaneView: DevicesView())
+    ]
+
+    lazy var preferencesWindowController = PreferencesWindowController(
+        preferencePanes: preferences,
+        style: PreferencesStyle.segmentedControl,
+        animated: true,
+        hidesToolbarForSingleItem: true
+    )
     
-//    @objc func onPreferences() {
-//        preferencesWindowController.show()
-//    }
-//
-//    @objc func onAbout() {
-//        NSApplication.shared.orderFrontStandardAboutPanel(self)
-//    }
-//
-//    @objc func onQuit() {
-//        NSApplication.shared.terminate(self)
-//    }
+    @discardableResult
+    override init() {
+        super.init()
+        
+        getAppDelegate().statusItem = getStatusItem()
+    }
+    
+    func getStatusItem() -> NSStatusItem {
+        let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+
+        statusItem.button?.title = "Raivo"
+        statusItem.button?.image = NSImage(named: "menu")
+        statusItem.menu = getMenu()
+        
+        return statusItem
+    }
+    
+    func getMenu() -> NSMenu {
+        let menu = NSMenu()
+        menu.delegate = self
+
+        menu.addItem(NSMenuItem(title: "Raivo MacOS v0.0.1", action: nil, keyEquivalent: ""))
+        menu.addItem(NSMenuItem.separator())
+
+        let preferencesItem = NSMenuItem(title: "Preferences", action: #selector(onPreferences), keyEquivalent: "p")
+        preferencesItem.target = self
+        menu.addItem(preferencesItem)
+
+        let aboutItem = NSMenuItem(title: "About", action: #selector(onAbout), keyEquivalent: "a")
+        aboutItem.target = self
+        menu.addItem(aboutItem)
+
+        let quitItem = NSMenuItem(title: "Quit", action: #selector(onQuit), keyEquivalent: "q")
+        quitItem.target = self
+        menu.addItem(quitItem)
+        
+        return menu
+    }
+    
+    @objc func onPreferences() {
+        preferencesWindowController.show()
+    }
+
+    @objc func onAbout() {
+        getAppPrincipal().orderFrontStandardAboutPanel(self)
+    }
+
+    @objc func onQuit() {
+        getAppPrincipal().terminate(self)
+    }
+    
+    @objc func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
+        return true // or whatever, on whichever condition
+    }
+    
     
 }
