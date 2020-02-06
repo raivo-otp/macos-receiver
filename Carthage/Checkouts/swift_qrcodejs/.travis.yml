@@ -1,0 +1,38 @@
+language: generic
+matrix:
+  include:
+    - os: linux
+      dist: trusty
+    - os: linux
+      dist: xenial
+    - os: osx
+      osx_image: xcode10.2
+
+before_install:
+  - if [ $TRAVIS_OS_NAME == "osx" ]; then
+      gem install cocoapods --pre --no-document --quiet;
+    else
+      eval "$(curl -sL https://raw.githubusercontent.com/ApolloZhu/script/master/swift/install/5)";
+    fi
+script:
+  - if [ $TRAVIS_OS_NAME == "osx" ]; then
+      xcodebuild test -scheme swift_qrcodejs-macOS &&
+      carthage build --no-skip-current &&
+      pod lib lint;
+    else
+      eval "$(curl -sL https://raw.githubusercontent.com/ApolloZhu/script/master/swift/ci)";
+    fi
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+before_deploy:
+  - swift package generate-xcodeproj # Intensionaly overwrite xcodeproj
+  - sh jazzy.sh
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: docs
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  on:
+    branch: master
+    condition: $TRAVIS_OS_NAME = osx

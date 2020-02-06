@@ -9,6 +9,8 @@
 import Cocoa
 import SwiftUI
 import Preferences
+import EFQRCode
+
 
 struct DevicesView: View, PreferencePaneView {
     
@@ -18,11 +20,30 @@ struct DevicesView: View, PreferencePaneView {
     
     let toolbarItemIcon: NSImage = NSImage(named: NSImage.userAccountsName)!
     
-    var body: some View {
-        VStack (alignment: .leading, spacing: 5) {
-            Text("Testing")
+    var qrcode: Image?
+    
+    var deviceToken: Data?
+    
+    mutating func notifyAboutDeviceToken(_ token: Data)
+    {
+        deviceToken = token
+        
+        guard let content = self.deviceToken?.hexString else {
+            return
         }
-        .frame(minWidth: 450, alignment: .topLeading)
+        
+        guard let image = EFQRCode.generate(content: content, size: EFIntSize(width: 500, height: 500), backgroundColor: CGColor.clear, foregroundColor: NSColor.textColor.cgColor, allowTransparent: true) else {
+            return
+        }
+        
+        self.qrcode = Image(image, scale: CGFloat(1), label: Text("QR code"))
+    }
+    
+    var body: some View {
+        VStack (alignment: .center, spacing: 5) {
+            qrcode?.resizable().frame(maxWidth: 250, maxHeight: 250)
+        }
+        .frame(minWidth: 450, minHeight: 300, alignment: .center)
     }
     
 }

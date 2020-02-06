@@ -14,18 +14,14 @@ extension PreferencePane.Identifier {
     static let devices = Identifier("devices")
 }
 
-class StatusBarFeature: NSObject, NSMenuDelegate, NSMenuItemValidation {
-    
-    lazy var preferences: [PreferencePane] = [
-        PreferencePaneHostingController(preferencePaneView: GeneralView()),
-        PreferencePaneHostingController(preferencePaneView: DevicesView())
-    ]
+class StatusBarFeature: NSObject {
 
     lazy var preferencesWindowController = PreferencesWindowController(
-        preferencePanes: preferences,
-        style: PreferencesStyle.segmentedControl,
-        animated: true,
-        hidesToolbarForSingleItem: true
+        preferencePanes: [
+            PreferencePaneHostingController(preferencePaneView: getAppDelegate().generalView),
+            PreferencePaneHostingController(preferencePaneView: getAppDelegate().devicesView)
+        ],
+        style: PreferencesStyle.segmentedControl
     )
     
     @discardableResult
@@ -47,7 +43,6 @@ class StatusBarFeature: NSObject, NSMenuDelegate, NSMenuItemValidation {
     
     func getMenu() -> NSMenu {
         let menu = NSMenu()
-        menu.delegate = self
 
         menu.addItem(NSMenuItem(title: "Raivo MacOS v0.0.1", action: nil, keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
@@ -78,10 +73,5 @@ class StatusBarFeature: NSObject, NSMenuDelegate, NSMenuItemValidation {
     @objc func onQuit() {
         getAppPrincipal().terminate(self)
     }
-    
-    @objc func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
-        return true // or whatever, on whichever condition
-    }
-    
     
 }

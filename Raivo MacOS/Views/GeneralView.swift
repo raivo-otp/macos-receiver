@@ -35,7 +35,7 @@ struct GeneralView: View, PreferencePaneView {
             }
             .padding()
         }
-        .frame(minWidth: 450, alignment: .topLeading)
+        .frame(minWidth: 450, minHeight: 300, alignment: .topLeading)
     }
     
 }
