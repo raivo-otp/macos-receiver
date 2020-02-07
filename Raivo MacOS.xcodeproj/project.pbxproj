@@ -13,7 +13,6 @@
 		700234B223E73D37002110CD /* Preferences.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 700234AE23E73D37002110CD /* Preferences.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7069B41D23E631BC0045B0F3 /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B41C23E631BC0045B0F3 /* ApplicationDelegate.swift */; };
 		7069B42123E631BE0045B0F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7069B42023E631BE0045B0F3 /* Assets.xcassets */; };
-		7069B42423E631BE0045B0F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7069B42323E631BE0045B0F3 /* Preview Assets.xcassets */; };
 		7069B43523E6DF9E0045B0F3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43423E6DF9E0045B0F3 /* main.swift */; };
 		7069B43723E6E02B0045B0F3 /* ApplicationPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43623E6E02B0045B0F3 /* ApplicationPrincipal.swift */; };
 		7069B43923E6E26F0045B0F3 /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43823E6E26F0045B0F3 /* GeneralView.swift */; };
@@ -22,6 +21,9 @@
 		70DD2A7023EC8E8E003DE95F /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2A6F23EC8E8E003DE95F /* DataExtension.swift */; };
 		70DD2A7223EC92CB003DE95F /* EFQRCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70DD2A7123EC92CB003DE95F /* EFQRCode.framework */; };
 		70DD2A7323EC92CB003DE95F /* EFQRCode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 70DD2A7123EC92CB003DE95F /* EFQRCode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		70FF64FF23EDEE4A00B94593 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FF64FE23EDEE4A00B94593 /* NotificationHelper.swift */; };
+		70FF650123EDF0C800B94593 /* Previews.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70FF650023EDF0C800B94593 /* Previews.xcassets */; };
+		70FF650323EDF1A600B94593 /* ClipboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FF650223EDF1A600B94593 /* ClipboardHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,8 +50,6 @@
 		7069B41923E631BC0045B0F3 /* Raivo MacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Raivo MacOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7069B41C23E631BC0045B0F3 /* ApplicationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegate.swift; sourceTree = "<group>"; };
 		7069B42023E631BE0045B0F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7069B42323E631BE0045B0F3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		7069B42623E631BE0045B0F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7069B42823E631BE0045B0F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7069B42923E631BE0045B0F3 /* Raivo_MacOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Raivo_MacOS.entitlements; sourceTree = "<group>"; };
 		7069B43423E6DF9E0045B0F3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -59,6 +59,9 @@
 		7069B43D23E6E39D0045B0F3 /* StatusBarFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarFeature.swift; sourceTree = "<group>"; };
 		70DD2A6F23EC8E8E003DE95F /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 		70DD2A7123EC92CB003DE95F /* EFQRCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EFQRCode.framework; path = Carthage/Build/Mac/EFQRCode.framework; sourceTree = "<group>"; };
+		70FF64FE23EDEE4A00B94593 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
+		70FF650023EDF0C800B94593 /* Previews.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Previews.xcassets; sourceTree = "<group>"; };
+		70FF650223EDF1A600B94593 /* ClipboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,23 +101,14 @@
 				7069B42923E631BE0045B0F3 /* Raivo_MacOS.entitlements */,
 				70DD2A6E23EC8E81003DE95F /* Extensions */,
 				7069B43C23E6E3780045B0F3 /* Features */,
-				7069B42223E631BE0045B0F3 /* Preview Content */,
+				70FF64FD23EDED6700B94593 /* Helpers */,
 				7069B43223E6DF4C0045B0F3 /* Supporting */,
-				7069B43323E6DF750045B0F3 /* Storyboards */,
 				7069B43123E6DF460045B0F3 /* Views */,
 				7069B43623E6E02B0045B0F3 /* ApplicationPrincipal.swift */,
 				7069B41C23E631BC0045B0F3 /* ApplicationDelegate.swift */,
 				7069B43423E6DF9E0045B0F3 /* main.swift */,
 			);
 			path = "Raivo MacOS";
-			sourceTree = "<group>";
-		};
-		7069B42223E631BE0045B0F3 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				7069B42323E631BE0045B0F3 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		7069B43123E6DF460045B0F3 /* Views */ = {
@@ -130,17 +124,10 @@
 			isa = PBXGroup;
 			children = (
 				7069B42023E631BE0045B0F3 /* Assets.xcassets */,
+				70FF650023EDF0C800B94593 /* Previews.xcassets */,
 				7069B42823E631BE0045B0F3 /* Info.plist */,
 			);
 			path = Supporting;
-			sourceTree = "<group>";
-		};
-		7069B43323E6DF750045B0F3 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				7069B42523E631BE0045B0F3 /* Main.storyboard */,
-			);
-			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		7069B43C23E6E3780045B0F3 /* Features */ = {
@@ -157,6 +144,15 @@
 				70DD2A6F23EC8E8E003DE95F /* DataExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		70FF64FD23EDED6700B94593 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				70FF64FE23EDEE4A00B94593 /* NotificationHelper.swift */,
+				70FF650223EDF1A600B94593 /* ClipboardHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		9AF60B5A059A525133FDC1EE /* Frameworks */ = {
@@ -231,7 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7069B42423E631BE0045B0F3 /* Preview Assets.xcassets in Resources */,
+				70FF650123EDF0C800B94593 /* Previews.xcassets in Resources */,
 				7069B42123E631BE0045B0F3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +261,8 @@
 			files = (
 				7069B41D23E631BC0045B0F3 /* ApplicationDelegate.swift in Sources */,
 				7069B43923E6E26F0045B0F3 /* GeneralView.swift in Sources */,
+				70FF64FF23EDEE4A00B94593 /* NotificationHelper.swift in Sources */,
+				70FF650323EDF1A600B94593 /* ClipboardHelper.swift in Sources */,
 				7069B43E23E6E39D0045B0F3 /* StatusBarFeature.swift in Sources */,
 				7069B43523E6DF9E0045B0F3 /* main.swift in Sources */,
 				70DD2A7023EC8E8E003DE95F /* DataExtension.swift in Sources */,
@@ -274,17 +272,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		7069B42523E631BE0045B0F3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7069B42623E631BE0045B0F3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7069B42A23E631BE0045B0F3 /* Debug */ = {
@@ -408,7 +395,8 @@
 				CODE_SIGN_ENTITLEMENTS = "Raivo MacOS/Raivo_MacOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"Raivo MacOS/Preview Content\"";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Raivo MacOS/Supporting/Previews.xcassets\"";
 				DEVELOPMENT_TEAM = 564B4ETY69;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -424,7 +412,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.tij.Raivo-MacOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Raivo OTP";
 				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 5.0;
 			};
@@ -438,7 +426,8 @@
 				CODE_SIGN_ENTITLEMENTS = "Raivo MacOS/Raivo_MacOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"Raivo MacOS/Preview Content\"";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Raivo MacOS/Supporting/Previews.xcassets\"";
 				DEVELOPMENT_TEAM = 564B4ETY69;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -454,7 +443,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.tij.Raivo-MacOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Raivo OTP";
 				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 5.0;
 			};

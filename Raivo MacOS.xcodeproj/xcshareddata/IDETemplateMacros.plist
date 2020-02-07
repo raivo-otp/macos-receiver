@@ -1,3 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>FILEHEADER</key>
+        <string>
 //
 // Raivo OTP
 //
@@ -8,18 +14,6 @@
 // source and binary forms) for any purpose is strictly prohibited.
 //
 // https://github.com/raivo-otp/macos-receiver/blob/master/LICENSE.md
-//
-
-import Foundation
-
-/// TODO
-extension Data {
-    
-    /// TODO
-    ///
-    /// - Returns: TODO
-    func toHexString() -> String {
-        return map { String(format: "%02.2hhx", $0) }.joined()
-    }
-    
-}
+//</string>
+    </dict>
+</plist>

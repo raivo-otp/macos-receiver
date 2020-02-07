@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "app1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "qrcode_loading.png",
+      "filename" : "app2.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "app3.png",
       "scale" : "3x"
     }
   ],
@@ -19,6 +21,8 @@
     "author" : "xcode"
   },
   "properties" : {
-    "template-rendering-intent" : "original"
+    "template-rendering-intent" : "template",
+    "preserves-vector-representation" : true,
+    "auto-scaling" : "auto"
   }
 }

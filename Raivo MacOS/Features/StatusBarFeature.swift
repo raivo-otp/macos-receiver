@@ -1,9 +1,13 @@
 //
-//  StatusBarFeature.swift
-//  Raivo MacOS
+// Raivo OTP
 //
-//  Created by Tijme Gommers on 02/02/2020.
-//  Copyright © 2020 Tijme Gommers. All rights reserved.
+// Copyright (c) 2019 Tijme Gommers. All rights reserved. Raivo OTP
+// is provided 'as-is', without any express or implied warranty.
+//
+// Modification, duplication or distribution of this software (in
+// source and binary forms) for any purpose is strictly prohibited.
+//
+// https://github.com/raivo-otp/macos-receiver/blob/master/LICENSE.md
 //
 
 import Cocoa
@@ -14,8 +18,10 @@ extension PreferencePane.Identifier {
     static let devices = Identifier("devices")
 }
 
+/// TODO
 class StatusBarFeature: NSObject {
-
+    
+    /// TODO
     lazy var preferencesWindowController = PreferencesWindowController(
         preferencePanes: [
             PreferencePaneHostingController(preferencePaneView: getAppDelegate().generalView),
@@ -24,6 +30,7 @@ class StatusBarFeature: NSObject {
         style: PreferencesStyle.segmentedControl
     )
     
+    /// TODO
     @discardableResult
     override init() {
         super.init()
@@ -31,16 +38,22 @@ class StatusBarFeature: NSObject {
         getAppDelegate().statusItem = getStatusItem()
     }
     
+    /// TODO
+    ///
+    /// - Returns: TODO
     func getStatusItem() -> NSStatusItem {
         let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
         statusItem.button?.title = "Raivo"
-        statusItem.button?.image = NSImage(named: "menu")
+        statusItem.button?.image = NSImage(named: "MenuIcon")
         statusItem.menu = getMenu()
         
         return statusItem
     }
     
+    /// TODO
+    ///
+    /// - Returns: TODO
     func getMenu() -> NSMenu {
         let menu = NSMenu()
 
@@ -62,14 +75,19 @@ class StatusBarFeature: NSObject {
         return menu
     }
     
+    /// TODO
     @objc func onPreferences() {
         preferencesWindowController.show()
+        getAppPrincipal().activate(ignoringOtherApps: true)
     }
-
+    
+    /// TODO
     @objc func onAbout() {
         getAppPrincipal().orderFrontStandardAboutPanel(self)
+        getAppPrincipal().activate(ignoringOtherApps: true)
     }
-
+    
+    /// TODO
     @objc func onQuit() {
         getAppPrincipal().terminate(self)
     }
