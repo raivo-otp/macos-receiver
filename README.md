@@ -20,7 +20,7 @@
 ## Features
 
 * ToDo
-* It's fast (native, built in Swift(UI) 5)
+* It's fast (native, built in Swift<sup>UI</sup> 5)
 * It's secure (see the [security policy](https://github.com/raivo-otp/macos-receiver/blob/master/SECURITY.md) for more information)
 * It's open-source (check the [contribution policy](https://github.com/raivo-otp/macos-receiver/blob/master/CONTRIBUTING.md))
 
