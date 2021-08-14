@@ -16,10 +16,8 @@ import Preferences
 import EFQRCode
 
 
-struct DevicesView: View, PreferencePaneView {
-    
-    let preferencePaneIdentifier: PreferencePaneIdentifier = .general
-    
+struct DevicesView: View {
+        
     let preferencePaneTitle: String = "QR code"
     
     let toolbarItemIcon: NSImage = NSImage(named: NSImage.userAccountsName)!
@@ -27,7 +25,7 @@ struct DevicesView: View, PreferencePaneView {
     var qrcode: Image?
     
     var deviceToken: Data?
-    
+        
     mutating func notifyAboutDeviceToken(_ token: Data)
     {
         deviceToken = token
@@ -35,8 +33,8 @@ struct DevicesView: View, PreferencePaneView {
         guard let content = self.deviceToken?.toHexString() else {
             return
         }
-        
-        guard let image = EFQRCode.generate(content: content, size: EFIntSize(width: 500, height: 500), backgroundColor: CGColor.clear, foregroundColor: NSColor.textColor.cgColor, allowTransparent: true) else {
+           
+        guard let image = EFQRCode.generate(for: content, size: EFIntSize(width: 500, height: 500), backgroundColor: CGColor.clear, foregroundColor: NSColor.textColor.cgColor, watermarkIsTransparent: true) else {
             return
         }
         
@@ -45,9 +43,9 @@ struct DevicesView: View, PreferencePaneView {
     
     var body: some View {
         VStack (alignment: .center, spacing: 5) {
-            qrcode?.resizable().frame(maxWidth: 250, maxHeight: 250)
+            qrcode?.resizable().frame(maxWidth: 200, maxHeight: 200)
         }
-        .frame(minWidth: 450, minHeight: 300, alignment: .center)
+        .frame(minWidth: 450, minHeight: 250, alignment: .center)
     }
     
 }

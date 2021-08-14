@@ -15,9 +15,7 @@ import SwiftUI
 import Preferences
 import LaunchAtLogin
 
-struct GeneralView: View, PreferencePaneView {
-
-    let preferencePaneIdentifier: PreferencePaneIdentifier = .general
+struct GeneralView: View {
     
     let preferencePaneTitle: String = "General"
     
@@ -28,7 +26,7 @@ struct GeneralView: View, PreferencePaneView {
             LaunchAtLogin.isEnabled = launchOnLogin
         }
     }
-
+    
     var body: some View {
         VStack (alignment: .leading, spacing: 5) {
             VStack (alignment: .leading, spacing: 0) {
@@ -39,8 +37,9 @@ struct GeneralView: View, PreferencePaneView {
             }
             .padding()
         }
-        .frame(minWidth: 450, minHeight: 300, alignment: .topLeading)
+        .frame(minWidth: 450, minHeight: 250, alignment: .topLeading)
     }
+
     
 }
 

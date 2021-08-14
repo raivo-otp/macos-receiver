@@ -3,14 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		700234AF23E73D37002110CD /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 700234AD23E73D37002110CD /* LaunchAtLogin.framework */; };
-		700234B023E73D37002110CD /* LaunchAtLogin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 700234AD23E73D37002110CD /* LaunchAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		700234B123E73D37002110CD /* Preferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 700234AE23E73D37002110CD /* Preferences.framework */; };
-		700234B223E73D37002110CD /* Preferences.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 700234AE23E73D37002110CD /* Preferences.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7069B41D23E631BC0045B0F3 /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B41C23E631BC0045B0F3 /* ApplicationDelegate.swift */; };
 		7069B42123E631BE0045B0F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7069B42023E631BE0045B0F3 /* Assets.xcassets */; };
 		7069B43523E6DF9E0045B0F3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43423E6DF9E0045B0F3 /* main.swift */; };
@@ -18,35 +14,16 @@
 		7069B43923E6E26F0045B0F3 /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43823E6E26F0045B0F3 /* GeneralView.swift */; };
 		7069B43B23E6E2790045B0F3 /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43A23E6E2790045B0F3 /* DevicesView.swift */; };
 		7069B43E23E6E39D0045B0F3 /* StatusBarFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43D23E6E39D0045B0F3 /* StatusBarFeature.swift */; };
+		70C7F21A26713A6E00A109AC /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 70C7F21926713A6E00A109AC /* LaunchAtLogin */; };
+		70C7F21D26713A9800A109AC /* EFQRCode in Frameworks */ = {isa = PBXBuildFile; productRef = 70C7F21C26713A9800A109AC /* EFQRCode */; };
+		70C7F22026713AAB00A109AC /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = 70C7F21F26713AAB00A109AC /* Preferences */; };
+		70C7F2222671412D00A109AC /* Development.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70C7F2212671412D00A109AC /* Development.xcassets */; };
 		70DD2A7023EC8E8E003DE95F /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2A6F23EC8E8E003DE95F /* DataExtension.swift */; };
-		70DD2A7223EC92CB003DE95F /* EFQRCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70DD2A7123EC92CB003DE95F /* EFQRCode.framework */; };
-		70DD2A7323EC92CB003DE95F /* EFQRCode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 70DD2A7123EC92CB003DE95F /* EFQRCode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		70FF64FF23EDEE4A00B94593 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FF64FE23EDEE4A00B94593 /* NotificationHelper.swift */; };
-		70FF650123EDF0C800B94593 /* Previews.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70FF650023EDF0C800B94593 /* Previews.xcassets */; };
 		70FF650323EDF1A600B94593 /* ClipboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FF650223EDF1A600B94593 /* ClipboardHelper.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		700234B323E73D37002110CD /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				700234B023E73D37002110CD /* LaunchAtLogin.framework in Embed Frameworks */,
-				70DD2A7323EC92CB003DE95F /* EFQRCode.framework in Embed Frameworks */,
-				700234B223E73D37002110CD /* Preferences.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		700234AB23E73B5E002110CD /* Preferences.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Preferences.framework.dSYM; path = Carthage/Build/Mac/Preferences.framework.dSYM; sourceTree = "<group>"; };
-		700234AC23E73B5E002110CD /* LaunchAtLogin.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = LaunchAtLogin.framework.dSYM; path = Carthage/Build/Mac/LaunchAtLogin.framework.dSYM; sourceTree = "<group>"; };
-		700234AD23E73D37002110CD /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
-		700234AE23E73D37002110CD /* Preferences.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Preferences.framework; path = Carthage/Build/Mac/Preferences.framework; sourceTree = "<group>"; };
 		7069B41923E631BC0045B0F3 /* Raivo OTP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Raivo OTP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7069B41C23E631BC0045B0F3 /* ApplicationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegate.swift; sourceTree = "<group>"; };
 		7069B42023E631BE0045B0F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,10 +34,9 @@
 		7069B43823E6E26F0045B0F3 /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		7069B43A23E6E2790045B0F3 /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
 		7069B43D23E6E39D0045B0F3 /* StatusBarFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarFeature.swift; sourceTree = "<group>"; };
+		70C7F2212671412D00A109AC /* Development.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Development.xcassets; sourceTree = "<group>"; };
 		70DD2A6F23EC8E8E003DE95F /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
-		70DD2A7123EC92CB003DE95F /* EFQRCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EFQRCode.framework; path = Carthage/Build/Mac/EFQRCode.framework; sourceTree = "<group>"; };
 		70FF64FE23EDEE4A00B94593 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
-		70FF650023EDF0C800B94593 /* Previews.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Previews.xcassets; sourceTree = "<group>"; };
 		70FF650223EDF1A600B94593 /* ClipboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,9 +45,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				700234AF23E73D37002110CD /* LaunchAtLogin.framework in Frameworks */,
-				70DD2A7223EC92CB003DE95F /* EFQRCode.framework in Frameworks */,
-				700234B123E73D37002110CD /* Preferences.framework in Frameworks */,
+				70C7F21A26713A6E00A109AC /* LaunchAtLogin in Frameworks */,
+				70C7F22026713AAB00A109AC /* Preferences in Frameworks */,
+				70C7F21D26713A9800A109AC /* EFQRCode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,9 +99,9 @@
 		7069B43223E6DF4C0045B0F3 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
-				7069B42023E631BE0045B0F3 /* Assets.xcassets */,
-				70FF650023EDF0C800B94593 /* Previews.xcassets */,
 				7069B42823E631BE0045B0F3 /* Info.plist */,
+				7069B42023E631BE0045B0F3 /* Assets.xcassets */,
+				70C7F2212671412D00A109AC /* Development.xcassets */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
@@ -158,11 +134,6 @@
 		9AF60B5A059A525133FDC1EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				70DD2A7123EC92CB003DE95F /* EFQRCode.framework */,
-				700234AD23E73D37002110CD /* LaunchAtLogin.framework */,
-				700234AE23E73D37002110CD /* Preferences.framework */,
-				700234AC23E73B5E002110CD /* LaunchAtLogin.framework.dSYM */,
-				700234AB23E73B5E002110CD /* Preferences.framework.dSYM */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -177,14 +148,17 @@
 				7069B41523E631BC0045B0F3 /* Sources */,
 				7069B41623E631BC0045B0F3 /* Frameworks */,
 				7069B41723E631BC0045B0F3 /* Resources */,
-				700234B323E73D37002110CD /* Embed Frameworks */,
-				701E2F2B23E742D200457C9D /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Raivo MacOS";
+			packageProductDependencies = (
+				70C7F21926713A6E00A109AC /* LaunchAtLogin */,
+				70C7F21C26713A9800A109AC /* EFQRCode */,
+				70C7F21F26713AAB00A109AC /* Preferences */,
+			);
 			productName = "Raivo MacOS";
 			productReference = 7069B41923E631BC0045B0F3 /* Raivo OTP.app */;
 			productType = "com.apple.product-type.application";
@@ -213,6 +187,11 @@
 				Base,
 			);
 			mainGroup = 7069B41023E631BC0045B0F3;
+			packageReferences = (
+				70C7F21826713A6E00A109AC /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+				70C7F21B26713A9800A109AC /* XCRemoteSwiftPackageReference "EFQRCode" */,
+				70C7F21E26713AAB00A109AC /* XCRemoteSwiftPackageReference "Preferences" */,
+			);
 			productRefGroup = 7069B41A23E631BC0045B0F3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -227,32 +206,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70FF650123EDF0C800B94593 /* Previews.xcassets in Resources */,
 				7069B42123E631BE0045B0F3 /* Assets.xcassets in Resources */,
+				70C7F2222671412D00A109AC /* Development.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		701E2F2B23E742D200457C9D /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7069B41523E631BC0045B0F3 /* Sources */ = {
@@ -262,8 +221,8 @@
 				7069B41D23E631BC0045B0F3 /* ApplicationDelegate.swift in Sources */,
 				7069B43923E6E26F0045B0F3 /* GeneralView.swift in Sources */,
 				70FF64FF23EDEE4A00B94593 /* NotificationHelper.swift in Sources */,
-				70FF650323EDF1A600B94593 /* ClipboardHelper.swift in Sources */,
 				7069B43E23E6E39D0045B0F3 /* StatusBarFeature.swift in Sources */,
+				70FF650323EDF1A600B94593 /* ClipboardHelper.swift in Sources */,
 				7069B43523E6DF9E0045B0F3 /* main.swift in Sources */,
 				70DD2A7023EC8E8E003DE95F /* DataExtension.swift in Sources */,
 				7069B43B23E6E2790045B0F3 /* DevicesView.swift in Sources */,
@@ -396,20 +355,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Raivo MacOS/Supporting/Previews.xcassets\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Raivo MacOS/Supporting/Development.xcassets\"";
 				DEVELOPMENT_TEAM = 564B4ETY69;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Raivo MacOS/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.tij.Raivo-MacOS";
 				PRODUCT_NAME = "Raivo OTP";
@@ -427,20 +383,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Raivo MacOS/Supporting/Previews.xcassets\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Raivo MacOS/Supporting/Development.xcassets\"";
 				DEVELOPMENT_TEAM = 564B4ETY69;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Raivo MacOS/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.tij.Raivo-MacOS";
 				PRODUCT_NAME = "Raivo OTP";
@@ -471,6 +424,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		70C7F21826713A6E00A109AC /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+		70C7F21B26713A9800A109AC /* XCRemoteSwiftPackageReference "EFQRCode" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/EFPrefix/EFQRCode";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.1.0;
+			};
+		};
+		70C7F21E26713AAB00A109AC /* XCRemoteSwiftPackageReference "Preferences" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Preferences";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		70C7F21926713A6E00A109AC /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70C7F21826713A6E00A109AC /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
+		};
+		70C7F21C26713A9800A109AC /* EFQRCode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70C7F21B26713A9800A109AC /* XCRemoteSwiftPackageReference "EFQRCode" */;
+			productName = EFQRCode;
+		};
+		70C7F21F26713AAB00A109AC /* Preferences */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70C7F21E26713AAB00A109AC /* XCRemoteSwiftPackageReference "Preferences" */;
+			productName = Preferences;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7069B41123E631BC0045B0F3 /* Project object */;
 }

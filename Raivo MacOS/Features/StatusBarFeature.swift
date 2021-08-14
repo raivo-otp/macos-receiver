@@ -13,22 +13,44 @@
 import Cocoa
 import Preferences
 
-extension PreferencePane.Identifier {
-    static let general = Identifier("general")
-    static let devices = Identifier("devices")
+extension Preferences.PaneIdentifier {
+    static let general = Self("general")
+    static let devices = Self("devices")
 }
 
 /// TODO
 class StatusBarFeature: NSObject {
     
-    /// TODO
     lazy var preferencesWindowController = PreferencesWindowController(
-        preferencePanes: [
-            PreferencePaneHostingController(preferencePaneView: getAppDelegate().generalView),
-            PreferencePaneHostingController(preferencePaneView: getAppDelegate().devicesView)
+        panes: [
+            Preferences.Pane(
+                identifier: .general,
+                title: getAppDelegate().generalView.preferencePaneTitle,
+                toolbarIcon: NSImage(systemSymbolName: "gear", accessibilityDescription: "")!
+            ) {
+                getAppDelegate().generalView
+            },
+            Preferences.Pane(
+                identifier: .devices,
+                title: getAppDelegate().devicesView.preferencePaneTitle,
+                toolbarIcon: NSImage(systemSymbolName: "qrcode", accessibilityDescription: "")!
+            ) {
+                getAppDelegate().devicesView
+            }
         ],
-        style: PreferencesStyle.segmentedControl
+        style: .segmentedControl
     )
+    
+    /// TODO
+//    lazy var preferencesWindowController = PreferencesWindowController(
+//        preferencePanes: [
+//            GeneralPreferenceViewController(),
+//            AdvancedPreferenceViewController()
+////            getAppDelegate().generalView,
+////            getAppDelegate().devicesView
+//        ],
+//        style: .segmentedControl
+//    )
     
     /// TODO
     @discardableResult
