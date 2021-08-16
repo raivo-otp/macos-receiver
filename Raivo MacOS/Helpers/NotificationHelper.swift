@@ -11,6 +11,7 @@
 //
 
 import Foundation
+import UserNotifications
 
 // A helper class for performing notification actions in MacOS.
 class NotificationHelper {
@@ -45,18 +46,17 @@ class NotificationHelper {
     
     /// Build and show a notification to the MacOS user
     ///
-    /// - Parameter title: TODO
-    /// - Parameter description: TODO
-    /// - Returns: TODO
-    private func build(_ title: String, _ description: String) -> NSUserNotification {
-        let notification = NSUserNotification()
+    /// - Parameter title: The title to display in the alert
+    /// - Parameter description: The description to display in the alert
+    /// - Returns: The notification object that was builtd
+    private func build(_ title: String, _ description: String) -> UNNotificationRequest {
+        let content = UNMutableNotificationContent()
         
-        notification.title = title
-        notification.informativeText = description
-        notification.soundName = NSUserNotificationDefaultSoundName
-        notification.hasActionButton = false
-        
-        return notification
+        content.title = title
+        content.body = description
+        content.sound = UNNotificationSound.default
+
+        return UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: .none)
     }
     
     /// Called whenever a remote clipboard notification is received.
@@ -91,11 +91,7 @@ class NotificationHelper {
         }
         
         let notification = build("Received \(issuer) OTP", account)
-        
-        NSUserNotificationCenter.default.deliver(notification)
-        DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(3)) {
-            NSUserNotificationCenter.default.removeDeliveredNotification(notification)
-        }
+        UNUserNotificationCenter.current().add(notification)
     }
     
 }
