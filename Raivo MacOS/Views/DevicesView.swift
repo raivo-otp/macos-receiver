@@ -1,7 +1,7 @@
 //
 // Raivo OTP
 //
-// Copyright (c) 2019 Tijme Gommers. All rights reserved. Raivo OTP
+// Copyright (c) 2021 Tijme Gommers. All rights reserved. Raivo OTP
 // is provided 'as-is', without any express or implied warranty.
 //
 // Modification, duplication or distribution of this software (in
@@ -15,35 +15,67 @@ import SwiftUI
 import Preferences
 import EFQRCode
 
-
+/// A devices tab view shown in the preferences window
+///
+/// - Note: This contains details such as the QR-code that a Raivo OTP iOS user can scan
 struct DevicesView: View {
-        
+    
+    /// The title of the tab
     let preferencePaneTitle: String = "QR code"
     
-    let toolbarItemIcon: NSImage = NSImage(named: NSImage.userAccountsName)!
-    
+    /// The image showing a QR-code
+    ///
+    /// - Note: This is set only after the app registered for remote notifications and received a token
     var qrcode: Image?
     
-    var deviceToken: Data?
-        
-    mutating func notifyAboutDeviceToken(_ token: Data)
-    {
-        deviceToken = token
-        
-        guard let content = self.deviceToken?.toHexString() else {
-            return
+    /// The actual notification token for the app
+    ///
+    /// - Note: This is set only after the app registered for remote notifications and received a token
+    var token: String?
+    
+    /// Initialize the devices view.
+    ///
+    /// - Parameter token: A mock token (only used during SwiftUI previews)
+    init(_ token: Data? = nil) {
+        if let token = token {
+            notifyAboutDeviceToken(token)
         }
+    }
+        
+    /// Called when the app registered for remote notifications and received a token
+    ///
+    /// - Parameter token: The assigned notification token
+    mutating func notifyAboutDeviceToken(_ token: Data) {
+        let deviceToken = token
+        
+        guard let deviceNameString = Host.current().localizedName else {
+            return
+         }
+        
+        let content = "RaivoMacOSReceiver:" + deviceToken.toHexString() + ":" + deviceNameString
            
         guard let image = EFQRCode.generate(for: content, size: EFIntSize(width: 500, height: 500), backgroundColor: CGColor.clear, foregroundColor: NSColor.textColor.cgColor, watermarkIsTransparent: true) else {
             return
         }
         
+        self.token = deviceToken.toHexString()
         self.qrcode = Image(image, scale: CGFloat(1), label: Text("QR code"))
     }
     
+    /// The actual view shown when someone clicks on the general tab
+    ///
+    /// - Note: Shows the QR-code based on the received notification token
     var body: some View {
         VStack (alignment: .center, spacing: 5) {
-            qrcode?.resizable().frame(maxWidth: 200, maxHeight: 200)
+            if let qrcode = qrcode, let token = token {
+                qrcode.resizable().frame(maxWidth: 200, maxHeight: 200)
+                #if DEBUG
+                TextField("", text: .constant(token))
+                    .padding()
+                #endif
+            } else {
+                Text("Loading...")
+            }
         }
         .frame(minWidth: 450, minHeight: 250, alignment: .center)
     }
@@ -54,8 +86,8 @@ struct DevicesView: View {
 struct DevicesView_Previews: PreviewProvider {
     
     static var previews: some View {
-        DevicesView()
+        DevicesView("MockedToken".data(using: .utf8)!)
     }
-    
+
 }
 #endif

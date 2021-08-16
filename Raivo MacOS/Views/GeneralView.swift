@@ -1,7 +1,7 @@
 //
 // Raivo OTP
 //
-// Copyright (c) 2019 Tijme Gommers. All rights reserved. Raivo OTP
+// Copyright (c) 2021 Tijme Gommers. All rights reserved. Raivo OTP
 // is provided 'as-is', without any express or implied warranty.
 //
 // Modification, duplication or distribution of this software (in
@@ -15,18 +15,22 @@ import SwiftUI
 import Preferences
 import LaunchAtLogin
 
+/// A general tab view shown in the preferences window
+///
+/// - Note: This contains general preferences, such as if the application should launch on boot
 struct GeneralView: View {
     
+    /// The title of the tab
     let preferencePaneTitle: String = "General"
     
-    let toolbarItemIcon: NSImage = NSImage(named: NSImage.userAccountsName)!
-    
+    /// A boolean defining if the application should start on boot
     @State var launchOnLogin = LaunchAtLogin.isEnabled {
         didSet {
             LaunchAtLogin.isEnabled = launchOnLogin
         }
     }
     
+    /// The actual view shown when someone clicks on the general tab
     var body: some View {
         VStack (alignment: .leading, spacing: 5) {
             VStack (alignment: .leading, spacing: 0) {
@@ -39,7 +43,6 @@ struct GeneralView: View {
         }
         .frame(minWidth: 450, minHeight: 250, alignment: .topLeading)
     }
-
     
 }
 

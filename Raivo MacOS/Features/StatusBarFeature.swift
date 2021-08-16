@@ -1,7 +1,7 @@
 //
 // Raivo OTP
 //
-// Copyright (c) 2019 Tijme Gommers. All rights reserved. Raivo OTP
+// Copyright (c) 2021 Tijme Gommers. All rights reserved. Raivo OTP
 // is provided 'as-is', without any express or implied warranty.
 //
 // Modification, duplication or distribution of this software (in
@@ -13,14 +13,16 @@
 import Cocoa
 import Preferences
 
+/// The available panes in the GUI of the app
 extension Preferences.PaneIdentifier {
     static let general = Self("general")
     static let devices = Self("devices")
 }
 
-/// TODO
+/// The actual status bar app which has a menu, GUI and tab items
 class StatusBarFeature: NSObject {
     
+    /// Initiate the tabs and associate a title, icon and view
     lazy var preferencesWindowController = PreferencesWindowController(
         panes: [
             Preferences.Pane(
@@ -41,28 +43,16 @@ class StatusBarFeature: NSObject {
         style: .segmentedControl
     )
     
-    /// TODO
-//    lazy var preferencesWindowController = PreferencesWindowController(
-//        preferencePanes: [
-//            GeneralPreferenceViewController(),
-//            AdvancedPreferenceViewController()
-////            getAppDelegate().generalView,
-////            getAppDelegate().devicesView
-//        ],
-//        style: .segmentedControl
-//    )
-    
-    /// TODO
-    @discardableResult
+    /// Initialize the status bar feature by setting the status root item (containing menu items) in the app delegate
     override init() {
         super.init()
         
         getAppDelegate().statusItem = getStatusItem()
     }
     
-    /// TODO
+    /// Build and get the status root item (a Raivo logo with a menu)
     ///
-    /// - Returns: TODO
+    /// - Returns: The status root item
     func getStatusItem() -> NSStatusItem {
         let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
@@ -73,9 +63,9 @@ class StatusBarFeature: NSObject {
         return statusItem
     }
     
-    /// TODO
+    /// Initialize and return the menu that shows on click of the Raivo icon status root item
     ///
-    /// - Returns: TODO
+    /// - Returns: The menu containing various clickable items, such as 'Preferences'.
     func getMenu() -> NSMenu {
         let menu = NSMenu()
 
@@ -97,19 +87,23 @@ class StatusBarFeature: NSObject {
         return menu
     }
     
-    /// TODO
+    /// Called when a user clicks on the preferences menu item
     @objc func onPreferences() {
         preferencesWindowController.show()
         getAppPrincipal().activate(ignoringOtherApps: true)
     }
     
-    /// TODO
+    /// Called when a user clicks on the about menu item
+    ///
+    /// - Note: This show's MacOS' standard about panel
     @objc func onAbout() {
         getAppPrincipal().orderFrontStandardAboutPanel(self)
         getAppPrincipal().activate(ignoringOtherApps: true)
     }
     
-    /// TODO
+    /// Called when a user clicks on the quit menu item
+    ///
+    /// - Note: This terminates the application
     @objc func onQuit() {
         getAppPrincipal().terminate(self)
     }

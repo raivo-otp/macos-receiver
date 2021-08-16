@@ -1,7 +1,7 @@
 //
 // Raivo OTP
 //
-// Copyright (c) 2019 Tijme Gommers. All rights reserved. Raivo OTP
+// Copyright (c) 2021 Tijme Gommers. All rights reserved. Raivo OTP
 // is provided 'as-is', without any express or implied warranty.
 //
 // Modification, duplication or distribution of this software (in
@@ -12,12 +12,12 @@
 
 import Foundation
 
-/// TODO
+/// Extending the data class with extra helper functionality
 extension Data {
     
-    /// TODO
+    /// Convert the current value to a hex encoded string
     ///
-    /// - Returns: TODO
+    /// - Returns: The hex representation
     func toHexString() -> String {
         return map { String(format: "%02.2hhx", $0) }.joined()
     }

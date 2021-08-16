@@ -29,6 +29,15 @@
         }
       },
       {
+        "package": "RNCryptor",
+        "repositoryURL": "https://github.com/RNCryptor/RNCryptor",
+        "state": {
+          "branch": null,
+          "revision": "5e3bbf44f08bf90049537cb8902d8f4fa911a79a",
+          "version": "5.1.0"
+        }
+      },
+      {
         "package": "swift_qrcodejs",
         "repositoryURL": "https://github.com/ApolloZhu/swift_qrcodejs.git",
         "state": {
