@@ -19,6 +19,7 @@
 		7092B99D26C85B1600B10065 /* CryptographyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7092B99C26C85B1600B10065 /* CryptographyError.swift */; };
 		70BEFE7526CC0DB60062151A /* Valet in Frameworks */ = {isa = PBXBuildFile; productRef = 70BEFE7426CC0DB60062151A /* Valet */; };
 		70BEFE7726CC0DCD0062151A /* StorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BEFE7626CC0DCD0062151A /* StorageHelper.swift */; };
+		70BEFE7A26CC24D80062151A /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BEFE7926CC24D80062151A /* AppHelper.swift */; };
 		70C7F21A26713A6E00A109AC /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 70C7F21926713A6E00A109AC /* LaunchAtLogin */; };
 		70C7F21D26713A9800A109AC /* EFQRCode in Frameworks */ = {isa = PBXBuildFile; productRef = 70C7F21C26713A9800A109AC /* EFQRCode */; };
 		70C7F22026713AAB00A109AC /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = 70C7F21F26713AAB00A109AC /* Preferences */; };
@@ -42,6 +43,7 @@
 		7092B99626C85A9600B10065 /* CryptographyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptographyHelper.swift; sourceTree = "<group>"; };
 		7092B99C26C85B1600B10065 /* CryptographyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptographyError.swift; sourceTree = "<group>"; };
 		70BEFE7626CC0DCD0062151A /* StorageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageHelper.swift; sourceTree = "<group>"; };
+		70BEFE7926CC24D80062151A /* AppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
 		70C7F2212671412D00A109AC /* Development.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Development.xcassets; sourceTree = "<group>"; };
 		70DD2A6F23EC8E8E003DE95F /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 		70FF64FE23EDEE4A00B94593 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				70FF650223EDF1A600B94593 /* ClipboardHelper.swift */,
 				7092B99626C85A9600B10065 /* CryptographyHelper.swift */,
 				70BEFE7626CC0DCD0062151A /* StorageHelper.swift */,
+				70BEFE7926CC24D80062151A /* AppHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				7069B43723E6E02B0045B0F3 /* ApplicationPrincipal.swift in Sources */,
 				7092B99726C85A9600B10065 /* CryptographyHelper.swift in Sources */,
 				70BEFE7726CC0DCD0062151A /* StorageHelper.swift in Sources */,
+				70BEFE7A26CC24D80062151A /* AppHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
