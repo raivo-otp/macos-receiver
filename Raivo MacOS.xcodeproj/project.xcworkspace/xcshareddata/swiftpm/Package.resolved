@@ -45,6 +45,15 @@
           "revision": "374dc7f7b9e76c6aeb393f6a84590c6d387e1ecb",
           "version": "2.2.2"
         }
+      },
+      {
+        "package": "Valet",
+        "repositoryURL": "https://github.com/Square/Valet",
+        "state": {
+          "branch": null,
+          "revision": "2bf3329055f5d71d42a12801dd69d1d770fafa5e",
+          "version": "4.1.2"
+        }
       }
     ]
   },

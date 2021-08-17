@@ -67,12 +67,12 @@ struct DevicesView: View {
     /// - Note: Shows the QR-code based on the received notification token
     var body: some View {
         VStack (alignment: .center, spacing: 5) {
-            if let qrcode = qrcode, let token = token {
+            if let qrcode = qrcode {
                 qrcode.resizable().frame(maxWidth: 200, maxHeight: 200)
-                #if DEBUG
-                TextField("", text: .constant(token))
-                    .padding()
-                #endif
+//                #if DEBUG
+//                TextField("", text: .constant(token))
+//                    .padding()
+//                #endif
             } else {
                 Text("Loading...")
             }

@@ -64,23 +64,28 @@ class NotificationHelper {
     /// - Parameter userInfo: The information from the remote notification
     /// - Note: This is usually called when a user taps on a password in Raivo OTP for iOS
     private func setClipboardNotification(_ userInfo: [String : Any]) {
+        guard let password = try? StorageHelper.shared.getDecryptionPassword() else {
+            let notification = build("Error: decryption password not set!", "Define your password in the settings tab.")
+            return UNUserNotificationCenter.current().add(notification)
+        }
+        
         guard
             let encryptedToken = userInfo["token"] as? String,
-            let token = try? CryptographyHelper.shared.decrypt(encryptedToken, withKey: "qqqqqqqq")
+            let token = try? CryptographyHelper.shared.decrypt(encryptedToken, withKey: password)
         else {
             return
         }
         
         guard
             let encryptedIssuer = userInfo["issuer"] as? String,
-            let issuer = try? CryptographyHelper.shared.decrypt(encryptedIssuer, withKey: "qqqqqqqq")
+            let issuer = try? CryptographyHelper.shared.decrypt(encryptedIssuer, withKey: password)
         else {
             return
         }
         
         guard
             let encryptedAccount = userInfo["account"] as? String,
-            let account = try? CryptographyHelper.shared.decrypt(encryptedAccount, withKey: "qqqqqqqq")
+            let account = try? CryptographyHelper.shared.decrypt(encryptedAccount, withKey: password)
         else {
             return
         }
