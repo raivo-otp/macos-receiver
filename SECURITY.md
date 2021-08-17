@@ -1,6 +1,6 @@
 # Security Policy
 
-> Effective date: April 16, 2019
+> Effective date: August 17, 2021
 
 Raivo ("us", "we", or "our") operates the Raivo mobile application (the "Service").
 
@@ -32,7 +32,3 @@ When the security team receives a security vulnerability report, they will assig
   * Audit the code to find any potential similar problems.
   * Prepare a fix for the upcoming release or a dedicated release. 
   * Publish the fix to the Apple App Store as soon as possible.
-
-## Data protection
-
-ToDo

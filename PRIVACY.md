@@ -1,6 +1,6 @@
 # Privacy Policy
 
-> Effective date: April 16, 2019
+> Effective date: August 17, 2021
 
 Raivo ("us", "we", or "our") operates the Raivo mobile application (the "Service").
 
