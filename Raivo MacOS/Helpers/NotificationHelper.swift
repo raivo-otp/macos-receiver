@@ -32,6 +32,7 @@ class NotificationHelper {
     /// - Parameter userInfo: The information from the remote notification
     public func notify(_ userInfo: [String : Any]) {
         guard let proposedType = userInfo["type"] as? Int else {
+            print(userInfo)
             return
         }
         
@@ -54,7 +55,7 @@ class NotificationHelper {
         
         content.title = title
         content.body = description
-        content.sound = UNNotificationSound.default
+        content.sound = .default
 
         return UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: .none)
     }
@@ -64,28 +65,23 @@ class NotificationHelper {
     /// - Parameter userInfo: The information from the remote notification
     /// - Note: This is usually called when a user taps on a password in Raivo OTP for iOS
     private func setClipboardNotification(_ userInfo: [String : Any]) {
-        guard let password = try? StorageHelper.shared.getDecryptionPassword() else {
-            let notification = build("Error: decryption password not set!", "Define your password in the settings tab.")
-            return UNUserNotificationCenter.current().add(notification)
-        }
-        
         guard
             let encryptedToken = userInfo["token"] as? String,
-            let token = try? CryptographyHelper.shared.decrypt(encryptedToken, withKey: password)
+            let token = try? CryptographyHelper.shared.decrypt(encryptedToken)
         else {
             return
         }
         
         guard
             let encryptedIssuer = userInfo["issuer"] as? String,
-            let issuer = try? CryptographyHelper.shared.decrypt(encryptedIssuer, withKey: password)
+            let issuer = try? CryptographyHelper.shared.decrypt(encryptedIssuer)
         else {
             return
         }
         
         guard
             let encryptedAccount = userInfo["account"] as? String,
-            let account = try? CryptographyHelper.shared.decrypt(encryptedAccount, withKey: password)
+            let account = try? CryptographyHelper.shared.decrypt(encryptedAccount)
         else {
             return
         }
@@ -95,8 +91,12 @@ class NotificationHelper {
             ClipboardHelper.shared.clear(token)
         }
         
-        let notification = build("Received \(issuer) OTP", account)
+        let notification = build("Received password for \(issuer)", account)
+        
         UNUserNotificationCenter.current().add(notification)
+        DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(30)) {
+            UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: [notification.identifier])
+        }
     }
     
 }

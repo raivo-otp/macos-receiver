@@ -13,6 +13,7 @@
 import Cocoa
 import SwiftUI
 import Preferences
+import UserNotifications
 
 ///
 /// Get the Application Delegate (shared `UIApplicationDelegate` class).
@@ -23,7 +24,7 @@ func getAppDelegate() -> ApplicationDelegate {
 }
 
 /// UI events that were launched from the ApplicationPrincipal
-class ApplicationDelegate: NSObject, NSApplicationDelegate {
+class ApplicationDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDelegate {
     
     /// The general preferences view
     lazy var generalView = GeneralView()
@@ -42,8 +43,19 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate {
     /// - Parameter notification: A notification named didFinishLaunchingNotification.
     func applicationDidFinishLaunching(_ notification: Notification) {
         statusBarFeature = StatusBarFeature()
-
-        getAppPrincipal().registerForRemoteNotifications(matching: [.alert, .badge, .sound])
+        
+        if StorageHelper.shared.getDecryptionPasswordIsPresent() == false {
+            try! StorageHelper.shared.setDecryptionPassword(CryptographyHelper.shared.getRandomDecryptionPassword())
+        }
+        
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+            if !granted {
+                print(error?.localizedDescription ?? "Push notification authorization not granted")
+            }
+        }
+        
+        getAppPrincipal().registerForRemoteNotifications()
     }
     
     /// Sent to the delegate when Apple Push Services successfully completes the registration process.
@@ -51,6 +63,7 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate {
     /// - Parameter application: The application that initiated the remote-notification registration process.
     /// - Parameter deviceToken: A token that identifies the device to Apple Push Notification Service (APNS).
     func application(_ application: NSApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        generalView.notifyAboutDeviceToken(deviceToken)
         devicesView.notifyAboutDeviceToken(deviceToken)
     }
     
@@ -62,6 +75,7 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate {
         print(error)
     }
     
+    
     /// Sent to the delegate when a running application receives a remote notification.
     ///
     /// - Parameter application: The application that received the remote notification.
@@ -69,5 +83,14 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate {
     func application(_ application: NSApplication, didReceiveRemoteNotification userInfo: [String : Any]) {
         NotificationHelper.shared.notify(userInfo)
     }
-
+    
+    /// Asks the delegate how to handle a notification that arrived while the app was running in the foreground.
+    ///
+    /// - Parameter center: The shared user notification center object that received the notification.
+    /// - Parameter notification: The notification that is about to be delivered. Use the information in this object to determine an appropriate course of action. For example, you might use the information to update your app’s interface.
+    /// - Parameter completionHandler: The block to execute with the presentation option for the notification. Always execute this block at some point during your implementation of this method.
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.badge, .banner, .list, .sound])
+    }
+    
 }

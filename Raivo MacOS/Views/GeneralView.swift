@@ -23,15 +23,36 @@ struct GeneralView: View {
     /// The title of the tab
     let preferencePaneTitle: String = "General"
     
+    /// The actual notification token for the app
+    ///
+    /// - Note: This is set only after the app registered for remote notifications and received a token
+    var token: String?
+    
     /// A boolean indicating if the clipboard should be cleared after x seconds
-    @State var clearClipboardAfterDelay = StorageHelper.shared.getClearEncryptionPasswordAfterDelay() {
+    @State var clearClipboardAfterDelay = StorageHelper.shared.getClearPasswordAfterDelay() {
         didSet {
-            try! StorageHelper.shared.setClearEncryptionPasswordAfterDelay(clearClipboardAfterDelay)
+            try! StorageHelper.shared.setClearPasswordAfterDelay(clearClipboardAfterDelay)
         }
     }
 
     /// A boolean indicating if the configure password sheet is currently shown or should be shown
     @State private var showingDecryptionPasswordSheet = false
+    
+    /// Initialize the devices view.
+    ///
+    /// - Parameter token: A mock token (only used during SwiftUI previews)
+    init(_ token: Data? = nil) {
+        if let token = token {
+            notifyAboutDeviceToken(token)
+        }
+    }
+    
+    /// Called when the app registered for remote notifications and received a token
+    ///
+    /// - Parameter token: The assigned notification token
+    mutating func notifyAboutDeviceToken(_ token: Data) {
+        self.token = token.toHexString()
+    }
     
     /// The actual view shown when someone clicks on the general tab
     var body: some View {
@@ -55,56 +76,21 @@ struct GeneralView: View {
                     Text("Clear received passwords from your clipboard after 30 seconds.").foregroundColor(.gray)
                 }
                 VStack (alignment: .leading, spacing: 0) {
-                    Button("Configure password") {
-                        showingDecryptionPasswordSheet.toggle()
-                    }.padding(.vertical, 4)
-                    Text("Stored securely in Keychain and used to decrypt passwords from Raivo OTP for iOS.").foregroundColor(.gray)
-                    
+                    Text("Push notification token").padding(.vertical, 4)
+                    Text(token ?? "Unknown...").foregroundColor(.gray).contextMenu {
+                        Button(action: {
+                            ClipboardHelper.shared.set(token ?? "Unknown...")
+                        }) {
+                            Text("Copy")
+                        }
+                    }
                 }
             }
             .padding()
         }
         .frame(minWidth: 450, minHeight: 250, alignment: .topLeading)
-        .sheet(
-            isPresented: $showingDecryptionPasswordSheet,
-            content: {
-                DecryptionPasswordSheet(
-                    showingDecryptionPasswordSheet: $showingDecryptionPasswordSheet
-                )
-            }
-        )
     }
     
-}
-
-/// A sheet (modal) shown when the user is configuring a decryption password
-struct DecryptionPasswordSheet : View {
-    
-    /// A boolean indicating if this sheet is currently shown or should be shown
-    @Binding var showingDecryptionPasswordSheet: Bool
-    
-    /// The value of the decryption password (secure field)
-    @State var decryptionPassword = ""
-    
-    /// The actual view shown in the sheet
-    var body: some View {
-        VStack (alignment: .center, spacing: 5) {
-            Text("Decryption password").bold()
-            Text("This must be the same password as in Raivo OTP for iOS!").foregroundColor(.gray)
-            SecureField("Password...", text: $decryptionPassword)
-            HStack (alignment: .center, spacing: 5) {
-                Button("Cancel") {
-                    decryptionPassword = ""
-                    showingDecryptionPasswordSheet.toggle()
-                }
-                Button("Save") {
-                    try? StorageHelper.shared.setDecryptionPassword(decryptionPassword)
-                    decryptionPassword = ""
-                    showingDecryptionPasswordSheet.toggle()
-                }
-            }
-        }.padding(20)
-    }
 }
 
 #if DEBUG

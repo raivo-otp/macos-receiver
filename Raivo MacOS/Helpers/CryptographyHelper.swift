@@ -37,7 +37,7 @@ class CryptographyHelper {
             throw CryptographyError.decryptionFailed("Cipher was not a valid base64 string")
         }
         
-        let proposedPassword = key // ?? StorageHelper.shared.getEncryptionPassword()
+        let proposedPassword = try! key ?? StorageHelper.shared.getDecryptionPassword()
         
         guard let password = proposedPassword else {
             throw CryptographyError.decryptionFailed("Encryption password unknown (not available in the keychain or as parameter)")
@@ -49,6 +49,13 @@ class CryptographyHelper {
         )
         
         return String(data: plaintext, encoding: .utf8)!
+    }
+    
+    /// Generate random data and return as base64 encoded string
+    ///
+    /// - Returns: A base64 encoded random decryption password
+    public func getRandomDecryptionPassword() -> String {
+        return RNCryptor.randomData(ofLength: 32).base64EncodedString()
     }
 
 }

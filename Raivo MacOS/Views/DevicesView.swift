@@ -50,10 +50,14 @@ struct DevicesView: View {
         
         guard let deviceNameString = Host.current().localizedName else {
             return
-         }
+        }
         
-        let content = "RaivoMacOSReceiver:" + deviceToken.toHexString() + ":" + deviceNameString
-           
+        guard let password = try! StorageHelper.shared.getDecryptionPassword() else {
+            return
+        }
+        
+        let content = "raivo-otp://\(deviceToken.toHexString()):\(password):\(deviceNameString)"
+        
         guard let image = EFQRCode.generate(for: content, size: EFIntSize(width: 500, height: 500), backgroundColor: CGColor.clear, foregroundColor: NSColor.textColor.cgColor, watermarkIsTransparent: true) else {
             return
         }
@@ -69,10 +73,6 @@ struct DevicesView: View {
         VStack (alignment: .center, spacing: 5) {
             if let qrcode = qrcode {
                 qrcode.resizable().frame(maxWidth: 200, maxHeight: 200)
-//                #if DEBUG
-//                TextField("", text: .constant(token))
-//                    .padding()
-//                #endif
             } else {
                 Text("Loading...")
             }

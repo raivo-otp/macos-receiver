@@ -19,6 +19,7 @@ class StorageHelper {
     /// The keys that can be used to get/set values
     private struct Key {
         static let DECRYPTION_PASSWORD = "DecryptionPassword"
+        static let DECRYPTION_PASSWORD_IS_PRESENT = "DecryptionPasswordIsPresent"
         static let CLEAR_CLIPBOARD_AFTER_DELAY = "ClearClipboardAfterDelay"
     }
     
@@ -27,6 +28,13 @@ class StorageHelper {
    
     /// A private initializer to make sure this class can only be used as a singleton class
     private init() {}
+    
+    /// Get a `Valet` that enables you to store key/value pairs in the keychain (without any protection).
+    ///
+    /// - Returns: The `Valet` settings instance
+    public func globals() -> Valet {
+        return Valet.valet(with: Identifier(nonEmpty: "globals")!, accessibility: .afterFirstUnlock)
+    }
     
     /// Get a `Valet` that enables you to store key/value pairs in the keychain (outside of Secure Encalve).
     ///
@@ -40,11 +48,30 @@ class StorageHelper {
         try settings().removeAllObjects()
     }
     
+    /// Set a boolean indicating if a decryption password is present.
+    ///
+    /// - Parameter present: Positive if a decryption password is present
+    public func setDecryptionPasswordIsPresent(_ present: Bool) throws {
+        try globals().setString(String(present), forKey: Key.DECRYPTION_PASSWORD_IS_PRESENT)
+    }
+    
+    /// Check if a decryption password is present.
+    ///
+    /// - Returns: Positive if a decryption password is present
+    public func getDecryptionPasswordIsPresent() -> Bool {
+        guard let present = try? globals().string(forKey: Key.DECRYPTION_PASSWORD_IS_PRESENT) else {
+            return false
+        }
+        
+        return Bool(present) ?? false
+    }
+    
     /// Configure the decryption key (which must be the same as in Raivo OTP for iOS)
     ///
     /// - Parameter password: The new decryption key
     public func setDecryptionPassword(_ password: String) throws {
         try settings().setString(password, forKey: Key.DECRYPTION_PASSWORD)
+        try setDecryptionPasswordIsPresent(true)
     }
     
     /// Get the decryption key that can be used to decrypt recevied data
@@ -57,14 +84,14 @@ class StorageHelper {
     /// Configure if the clipboard should be cleared after a certain delay
     ///
     /// - Parameter doClear: Positive if it should be cleared
-    public func setClearEncryptionPasswordAfterDelay(_ doClear: Bool) throws {
+    public func setClearPasswordAfterDelay(_ doClear: Bool) throws {
         return try settings().setString(String(doClear), forKey: Key.CLEAR_CLIPBOARD_AFTER_DELAY)
     }
     
     /// Check if the clipboard should be cleared after a certain delay
     ///
     /// - Returns: Positive if it should be cleared
-    public func getClearEncryptionPasswordAfterDelay() -> Bool {
+    public func getClearPasswordAfterDelay() -> Bool {
         guard let resultString = try? settings().string(forKey: Key.CLEAR_CLIPBOARD_AFTER_DELAY) else {
             return true
         }
