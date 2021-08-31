@@ -88,7 +88,7 @@ struct GeneralView: View {
             }
             .padding()
         }
-        .frame(minWidth: 450, minHeight: 250, alignment: .topLeading)
+        .frame(minWidth: 550, minHeight: 250, alignment: .topLeading)
     }
     
 }

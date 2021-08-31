@@ -55,7 +55,7 @@ class CryptographyHelper {
     ///
     /// - Returns: A base64 encoded random decryption password
     public func getRandomDecryptionPassword() -> String {
-        return RNCryptor.randomData(ofLength: 32).base64EncodedString()
+        return RNCryptor.randomData(ofLength: 64).base64EncodedString()
     }
 
 }

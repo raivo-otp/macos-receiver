@@ -56,7 +56,7 @@ struct DevicesView: View {
             return
         }
         
-        let content = "raivo-otp://\(deviceToken.toHexString()):\(password):\(deviceNameString)"
+        let content = "raivo-otp://add-receiver/\(deviceToken.toHexString())?password=\(password)&name=\(deviceNameString)"
         
         guard let image = EFQRCode.generate(for: content, size: EFIntSize(width: 500, height: 500), backgroundColor: CGColor.clear, foregroundColor: NSColor.textColor.cgColor, watermarkIsTransparent: true) else {
             return
@@ -72,12 +72,12 @@ struct DevicesView: View {
     var body: some View {
         VStack (alignment: .center, spacing: 5) {
             if let qrcode = qrcode {
-                qrcode.resizable().frame(maxWidth: 200, maxHeight: 200)
+                qrcode.resizable().frame(maxWidth: 240, maxHeight: 240)
             } else {
                 Text("Loading...")
             }
         }
-        .frame(minWidth: 450, minHeight: 250, alignment: .center)
+        .frame(minWidth: 550, minHeight: 250, alignment: .center)
     }
     
 }
