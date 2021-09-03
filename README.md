@@ -2,8 +2,8 @@
     <img src="https://raw.githubusercontent.com/raivo-otp/ios-application/master/Assets/app-icon.png" width="200"/>
 </p>
 <p align="center">
-    <a href="#coming-soon">
-        <img src="https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2019-08-01&kind=iossoftware&bubble=ios_apps" width="180"/>
+    <a href="https://apps.apple.com/us/app/raivo-otp/id1498497896">
+        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/black/en-us?size=250x83&amp;releaseDate=1630627200&h=6e90548d950108610f9223ceedb72956" width="220"/>
     </a>
 </p>
 <p align="center">
