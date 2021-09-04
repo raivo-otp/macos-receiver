@@ -71,6 +71,12 @@ class StatusBarFeature: NSObject {
 
         menu.addItem(NSMenuItem(title: "Raivo OTP " + AppHelper.version, action: nil, keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
+        
+        #if DEBUG
+            menu.addItem(NSMenuItem(title: "Debug", action: nil, keyEquivalent: ""))
+            menu.addItem(NSMenuItem.separator())
+        #endif
+        
 
         let preferencesItem = NSMenuItem(title: "Preferences", action: #selector(onPreferences), keyEquivalent: "p")
         preferencesItem.target = self

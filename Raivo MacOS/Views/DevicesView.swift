@@ -48,16 +48,29 @@ struct DevicesView: View {
     mutating func notifyAboutDeviceToken(_ token: Data) {
         let deviceToken = token
         
-        guard let deviceNameString = Host.current().localizedName else {
+        guard let deviceNameRaw = Host.current().localizedName else {
             return
         }
         
-        guard let password = try! StorageHelper.shared.getDecryptionPassword() else {
+        guard let deviceNameEncoded = deviceNameRaw.addingPercentEncoding(withAllowedCharacters: .alphanumerics) else {
+            return
+        }
+                
+        guard let passwordRaw = try! StorageHelper.shared.getDecryptionPassword() else {
             return
         }
         
-        let content = "raivo-otp://add-receiver/\(deviceToken.toHexString())?password=\(password)&name=\(deviceNameString)"
-        
+        guard let passwordEncoded = passwordRaw.addingPercentEncoding(withAllowedCharacters: .alphanumerics) else {
+            return
+        }
+                
+        let content = "raivo-otp://add-receiver/" +
+            deviceToken.toHexString() +
+            "?password=" +
+            passwordEncoded +
+            "&name=" +
+            deviceNameEncoded
+                
         guard let image = EFQRCode.generate(for: content, size: EFIntSize(width: 500, height: 500), backgroundColor: CGColor.clear, foregroundColor: NSColor.textColor.cgColor, watermarkIsTransparent: true) else {
             return
         }
