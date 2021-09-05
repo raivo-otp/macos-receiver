@@ -30,7 +30,10 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCe
     lazy var generalView = GeneralView()
     
     /// The devices 'QR code' preferences view
-    lazy var devicesView = DevicesView()
+    lazy var scanView = ScanView()
+    
+    /// The help/support view
+    lazy var helpView = HelpView()
 
     /// We need to keep a strong reference to the status bar to make sure it keeps working
     var statusBarFeature: StatusBarFeature?
@@ -64,7 +67,7 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCe
     /// - Parameter deviceToken: A token that identifies the device to Apple Push Notification Service (APNS).
     func application(_ application: NSApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         generalView.notifyAboutDeviceToken(deviceToken)
-        devicesView.notifyAboutDeviceToken(deviceToken)
+        scanView.notifyAboutDeviceToken(deviceToken)
     }
     
     /// Sent to the delegate when Apple Push Service cannot successfully complete the registration process.

@@ -16,7 +16,8 @@ import Preferences
 /// The available panes in the GUI of the app
 extension Preferences.PaneIdentifier {
     static let general = Self("general")
-    static let devices = Self("devices")
+    static let scan = Self("scan")
+    static let help = Self("help")
 }
 
 /// The actual status bar app which has a menu, GUI and tab items
@@ -33,11 +34,18 @@ class StatusBarFeature: NSObject {
                 getAppDelegate().generalView
             },
             Preferences.Pane(
-                identifier: .devices,
-                title: getAppDelegate().devicesView.preferencePaneTitle,
+                identifier: .scan,
+                title: getAppDelegate().scanView.preferencePaneTitle,
                 toolbarIcon: NSImage(systemSymbolName: "qrcode", accessibilityDescription: "")!
             ) {
-                getAppDelegate().devicesView
+                getAppDelegate().scanView
+            },
+            Preferences.Pane(
+                identifier: .help,
+                title: getAppDelegate().helpView.preferencePaneTitle,
+                toolbarIcon: NSImage(systemSymbolName: "questionmark.circle", accessibilityDescription: "")!
+            ) {
+                getAppDelegate().helpView
             }
         ],
         style: .segmentedControl

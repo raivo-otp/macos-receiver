@@ -15,10 +15,10 @@ import SwiftUI
 import Preferences
 import EFQRCode
 
-/// A devices tab view shown in the preferences window
+/// A scan tab view shown in the preferences window
 ///
 /// - Note: This contains details such as the QR-code that a Raivo OTP iOS user can scan
-struct DevicesView: View {
+struct ScanView: View {
     
     /// The title of the tab
     let preferencePaneTitle: String = "QR code"
@@ -33,7 +33,7 @@ struct DevicesView: View {
     /// - Note: This is set only after the app registered for remote notifications and received a token
     var token: String?
     
-    /// Initialize the devices view.
+    /// Initialize the scan view.
     ///
     /// - Parameter token: A mock token (only used during SwiftUI previews)
     init(_ token: Data? = nil) {
@@ -52,7 +52,7 @@ struct DevicesView: View {
             return
         }
         
-        guard let deviceNameEncoded = deviceNameRaw.addingPercentEncoding(withAllowedCharacters: .alphanumerics) else {
+        guard let deviceNameEncoded = deviceNameRaw.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             return
         }
                 
@@ -60,7 +60,7 @@ struct DevicesView: View {
             return
         }
         
-        guard let passwordEncoded = passwordRaw.addingPercentEncoding(withAllowedCharacters: .alphanumerics) else {
+        guard let passwordEncoded = passwordRaw.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             return
         }
                 
@@ -96,10 +96,10 @@ struct DevicesView: View {
 }
 
 #if DEBUG
-struct DevicesView_Previews: PreviewProvider {
+struct ScanView_Previews: PreviewProvider {
     
     static var previews: some View {
-        DevicesView("MockedToken".data(using: .utf8)!)
+        ScanView("MockedToken".data(using: .utf8)!)
     }
 
 }
