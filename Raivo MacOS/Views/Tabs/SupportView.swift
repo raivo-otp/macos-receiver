@@ -15,15 +15,15 @@ import SwiftUI
 import Preferences
 import LaunchAtLogin
 
-/// A help tab view shown in the preferences window
+/// A support tab view shown in the preferences window
 ///
 /// - Note: This contains help & support for users that are unsure of how to use the app
-struct HelpView: View {
+struct SupportView: View {
     
     /// The title of the tab
     let preferencePaneTitle: String = "Help"
  
-    /// The actual view shown when someone clicks on the help tab
+    /// The actual view shown when someone clicks on the support tab
     var body: some View {
         VStack (alignment: .leading, spacing: 5) {
             VStack (alignment: .leading, spacing: 15) {
@@ -50,10 +50,10 @@ struct HelpView: View {
 }
 
 #if DEBUG
-struct HelpView_Previews: PreviewProvider {
+struct SupportView_Previews: PreviewProvider {
     
     static var previews: some View {
-        HelpView()
+        SupportView()
     }
     
 }

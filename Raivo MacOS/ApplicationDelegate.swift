@@ -13,6 +13,7 @@
 import Cocoa
 import SwiftUI
 import Preferences
+import SwiftyStoreKit
 import UserNotifications
 
 ///
@@ -26,14 +27,17 @@ func getAppDelegate() -> ApplicationDelegate {
 /// UI events that were launched from the ApplicationPrincipal
 class ApplicationDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDelegate {
     
+    /// The welcome to Raivo view
+    lazy var welcomeView = WelcomeView()
+    
     /// The general preferences view
-    lazy var generalView = GeneralView()
+    lazy var settingsView = SettingsView()
     
     /// The devices 'QR code' preferences view
-    lazy var scanView = ScanView()
+    lazy var linkingView = LinkingView()
     
     /// The help/support view
-    lazy var helpView = HelpView()
+    lazy var supportView = SupportView()
 
     /// We need to keep a strong reference to the status bar to make sure it keeps working
     var statusBarFeature: StatusBarFeature?
@@ -59,6 +63,20 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCe
         }
         
         getAppPrincipal().registerForRemoteNotifications()
+        
+        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
+            for purchase in purchases {
+                switch purchase.transaction.transactionState {
+                    case .purchased, .restored:
+                        if purchase.needsFinishTransaction {
+                            SwiftyStoreKit.finishTransaction(purchase.transaction)
+                        }
+    //                case .failed, .purchasing, .deferred:
+                    default:
+                        break
+                }
+            }
+        }
     }
     
     /// Sent to the delegate when Apple Push Services successfully completes the registration process.
@@ -66,8 +84,8 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCe
     /// - Parameter application: The application that initiated the remote-notification registration process.
     /// - Parameter deviceToken: A token that identifies the device to Apple Push Notification Service (APNS).
     func application(_ application: NSApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        generalView.notifyAboutDeviceToken(deviceToken)
-        scanView.notifyAboutDeviceToken(deviceToken)
+        settingsView.pushToken.data = deviceToken
+        linkingView.pushToken.data = deviceToken
     }
     
     /// Sent to the delegate when Apple Push Service cannot successfully complete the registration process.

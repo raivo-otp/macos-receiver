@@ -7,17 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		702E9A7026E3612E00451A51 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702E9A6F26E3612E00451A51 /* HelpView.swift */; };
+		70024C9C26EA7FA000DC398A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70024C9B26EA7FA000DC398A /* StoreKit.framework */; };
+		70024C9F26EA823D00DC398A /* SwiftyStoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = 70024C9E26EA823D00DC398A /* SwiftyStoreKit */; };
+		70222EA326F3BD710040B853 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70222EA226F3BD710040B853 /* ViewExtension.swift */; };
+		70222EA626F3BDE50040B853 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70222EA526F3BDE50040B853 /* TipJarView.swift */; };
+		70222EA826F3C2900040B853 /* ObservableProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70222EA726F3C2900040B853 /* ObservableProducts.swift */; };
+		702E9A7026E3612E00451A51 /* SupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702E9A6F26E3612E00451A51 /* SupportView.swift */; };
 		7069B41D23E631BC0045B0F3 /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B41C23E631BC0045B0F3 /* ApplicationDelegate.swift */; };
 		7069B42123E631BE0045B0F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7069B42023E631BE0045B0F3 /* Assets.xcassets */; };
 		7069B43523E6DF9E0045B0F3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43423E6DF9E0045B0F3 /* main.swift */; };
 		7069B43723E6E02B0045B0F3 /* ApplicationPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43623E6E02B0045B0F3 /* ApplicationPrincipal.swift */; };
-		7069B43923E6E26F0045B0F3 /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43823E6E26F0045B0F3 /* GeneralView.swift */; };
-		7069B43B23E6E2790045B0F3 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43A23E6E2790045B0F3 /* ScanView.swift */; };
+		7069B43923E6E26F0045B0F3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43823E6E26F0045B0F3 /* SettingsView.swift */; };
+		7069B43B23E6E2790045B0F3 /* LinkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43A23E6E2790045B0F3 /* LinkingView.swift */; };
 		7069B43E23E6E39D0045B0F3 /* StatusBarFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43D23E6E39D0045B0F3 /* StatusBarFeature.swift */; };
 		7092B99726C85A9600B10065 /* CryptographyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7092B99626C85A9600B10065 /* CryptographyHelper.swift */; };
 		7092B99A26C85AED00B10065 /* RNCryptor in Frameworks */ = {isa = PBXBuildFile; productRef = 7092B99926C85AED00B10065 /* RNCryptor */; };
 		7092B99D26C85B1600B10065 /* CryptographyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7092B99C26C85B1600B10065 /* CryptographyError.swift */; };
+		70AF98B626E939C7001B076D /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AF98B526E939C7001B076D /* WelcomeView.swift */; };
+		70AF98B926E94019001B076D /* ObservablePushToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AF98B826E94019001B076D /* ObservablePushToken.swift */; };
+		70AF98BF26E94B60001B076D /* QuickResponseCodeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AF98BE26E94B60001B076D /* QuickResponseCodeBackground.swift */; };
 		70BEFE7526CC0DB60062151A /* Valet in Frameworks */ = {isa = PBXBuildFile; productRef = 70BEFE7426CC0DB60062151A /* Valet */; };
 		70BEFE7726CC0DCD0062151A /* StorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BEFE7626CC0DCD0062151A /* StorageHelper.swift */; };
 		70BEFE7A26CC24D80062151A /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BEFE7926CC24D80062151A /* AppHelper.swift */; };
@@ -31,7 +39,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		702E9A6F26E3612E00451A51 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
+		70024C9B26EA7FA000DC398A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		70222EA226F3BD710040B853 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		70222EA526F3BDE50040B853 /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarView.swift; sourceTree = "<group>"; };
+		70222EA726F3C2900040B853 /* ObservableProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableProducts.swift; sourceTree = "<group>"; };
+		702E9A6F26E3612E00451A51 /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
 		7069B41923E631BC0045B0F3 /* Raivo OTP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Raivo OTP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7069B41C23E631BC0045B0F3 /* ApplicationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegate.swift; sourceTree = "<group>"; };
 		7069B42023E631BE0045B0F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -39,11 +51,14 @@
 		7069B42923E631BE0045B0F3 /* Raivo_MacOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Raivo_MacOS.entitlements; sourceTree = "<group>"; };
 		7069B43423E6DF9E0045B0F3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		7069B43623E6E02B0045B0F3 /* ApplicationPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationPrincipal.swift; sourceTree = "<group>"; };
-		7069B43823E6E26F0045B0F3 /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
-		7069B43A23E6E2790045B0F3 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
+		7069B43823E6E26F0045B0F3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		7069B43A23E6E2790045B0F3 /* LinkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkingView.swift; sourceTree = "<group>"; };
 		7069B43D23E6E39D0045B0F3 /* StatusBarFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarFeature.swift; sourceTree = "<group>"; };
 		7092B99626C85A9600B10065 /* CryptographyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptographyHelper.swift; sourceTree = "<group>"; };
 		7092B99C26C85B1600B10065 /* CryptographyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptographyError.swift; sourceTree = "<group>"; };
+		70AF98B526E939C7001B076D /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		70AF98B826E94019001B076D /* ObservablePushToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservablePushToken.swift; sourceTree = "<group>"; };
+		70AF98BE26E94B60001B076D /* QuickResponseCodeBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickResponseCodeBackground.swift; sourceTree = "<group>"; };
 		70BEFE7626CC0DCD0062151A /* StorageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageHelper.swift; sourceTree = "<group>"; };
 		70BEFE7926CC24D80062151A /* AppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
 		70C7F2212671412D00A109AC /* Development.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Development.xcassets; sourceTree = "<group>"; };
@@ -59,7 +74,9 @@
 			files = (
 				7092B99A26C85AED00B10065 /* RNCryptor in Frameworks */,
 				70BEFE7526CC0DB60062151A /* Valet in Frameworks */,
+				70024C9F26EA823D00DC398A /* SwiftyStoreKit in Frameworks */,
 				70C7F21A26713A6E00A109AC /* LaunchAtLogin in Frameworks */,
+				70024C9C26EA7FA000DC398A /* StoreKit.framework in Frameworks */,
 				70C7F22026713AAB00A109AC /* Preferences in Frameworks */,
 				70C7F21D26713A9800A109AC /* EFQRCode in Frameworks */,
 			);
@@ -68,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70222EA426F3BD7A0040B853 /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				70222EA526F3BDE50040B853 /* TipJarView.swift */,
+			);
+			path = Windows;
+			sourceTree = "<group>";
+		};
 		7069B41023E631BC0045B0F3 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +118,7 @@
 				70DD2A6E23EC8E81003DE95F /* Extensions */,
 				7069B43C23E6E3780045B0F3 /* Features */,
 				70FF64FD23EDED6700B94593 /* Helpers */,
+				70AF98B726E93FE0001B076D /* Observables */,
 				7069B43223E6DF4C0045B0F3 /* Supporting */,
 				7069B43123E6DF460045B0F3 /* Views */,
 				7069B43623E6E02B0045B0F3 /* ApplicationPrincipal.swift */,
@@ -105,9 +131,9 @@
 		7069B43123E6DF460045B0F3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7069B43823E6E26F0045B0F3 /* GeneralView.swift */,
-				7069B43A23E6E2790045B0F3 /* ScanView.swift */,
-				702E9A6F26E3612E00451A51 /* HelpView.swift */,
+				70222EA426F3BD7A0040B853 /* Windows */,
+				70AF98BD26E94B4E001B076D /* Images */,
+				70AF98BC26E94B41001B076D /* Tabs */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -138,10 +164,39 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
+		70AF98B726E93FE0001B076D /* Observables */ = {
+			isa = PBXGroup;
+			children = (
+				70AF98B826E94019001B076D /* ObservablePushToken.swift */,
+				70222EA726F3C2900040B853 /* ObservableProducts.swift */,
+			);
+			path = Observables;
+			sourceTree = "<group>";
+		};
+		70AF98BC26E94B41001B076D /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				70AF98B526E939C7001B076D /* WelcomeView.swift */,
+				7069B43823E6E26F0045B0F3 /* SettingsView.swift */,
+				7069B43A23E6E2790045B0F3 /* LinkingView.swift */,
+				702E9A6F26E3612E00451A51 /* SupportView.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		70AF98BD26E94B4E001B076D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				70AF98BE26E94B60001B076D /* QuickResponseCodeBackground.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		70DD2A6E23EC8E81003DE95F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				70DD2A6F23EC8E8E003DE95F /* DataExtension.swift */,
+				70222EA226F3BD710040B853 /* ViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -161,6 +216,7 @@
 		9AF60B5A059A525133FDC1EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				70024C9B26EA7FA000DC398A /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -188,6 +244,7 @@
 				70C7F21F26713AAB00A109AC /* Preferences */,
 				7092B99926C85AED00B10065 /* RNCryptor */,
 				70BEFE7426CC0DB60062151A /* Valet */,
+				70024C9E26EA823D00DC398A /* SwiftyStoreKit */,
 			);
 			productName = "Raivo MacOS";
 			productReference = 7069B41923E631BC0045B0F3 /* Raivo OTP.app */;
@@ -223,6 +280,7 @@
 				70C7F21E26713AAB00A109AC /* XCRemoteSwiftPackageReference "Preferences" */,
 				7092B99826C85AED00B10065 /* XCRemoteSwiftPackageReference "RNCryptor" */,
 				70BEFE7326CC0DB60062151A /* XCRemoteSwiftPackageReference "Valet" */,
+				70024C9D26EA823D00DC398A /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
 			);
 			productRefGroup = 7069B41A23E631BC0045B0F3 /* Products */;
 			projectDirPath = "";
@@ -271,16 +329,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70222EA326F3BD710040B853 /* ViewExtension.swift in Sources */,
 				7069B41D23E631BC0045B0F3 /* ApplicationDelegate.swift in Sources */,
-				7069B43923E6E26F0045B0F3 /* GeneralView.swift in Sources */,
+				7069B43923E6E26F0045B0F3 /* SettingsView.swift in Sources */,
 				70FF64FF23EDEE4A00B94593 /* NotificationHelper.swift in Sources */,
-				702E9A7026E3612E00451A51 /* HelpView.swift in Sources */,
+				70222EA826F3C2900040B853 /* ObservableProducts.swift in Sources */,
+				70AF98BF26E94B60001B076D /* QuickResponseCodeBackground.swift in Sources */,
+				70222EA626F3BDE50040B853 /* TipJarView.swift in Sources */,
+				702E9A7026E3612E00451A51 /* SupportView.swift in Sources */,
 				7069B43E23E6E39D0045B0F3 /* StatusBarFeature.swift in Sources */,
 				70FF650323EDF1A600B94593 /* ClipboardHelper.swift in Sources */,
 				7069B43523E6DF9E0045B0F3 /* main.swift in Sources */,
 				7092B99D26C85B1600B10065 /* CryptographyError.swift in Sources */,
 				70DD2A7023EC8E8E003DE95F /* DataExtension.swift in Sources */,
-				7069B43B23E6E2790045B0F3 /* ScanView.swift in Sources */,
+				7069B43B23E6E2790045B0F3 /* LinkingView.swift in Sources */,
+				70AF98B926E94019001B076D /* ObservablePushToken.swift in Sources */,
+				70AF98B626E939C7001B076D /* WelcomeView.swift in Sources */,
 				7069B43723E6E02B0045B0F3 /* ApplicationPrincipal.swift in Sources */,
 				7092B99726C85A9600B10065 /* CryptographyHelper.swift in Sources */,
 				70BEFE7726CC0DCD0062151A /* StorageHelper.swift in Sources */,
@@ -415,7 +479,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"Raivo MacOS/Supporting/Development.xcassets\"";
 				DEVELOPMENT_TEAM = 564B4ETY69;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -427,7 +491,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.tij.Raivo-MacOS";
 				PRODUCT_NAME = "Raivo OTP";
 				SKIP_INSTALL = NO;
@@ -444,7 +508,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"Raivo MacOS/Supporting/Development.xcassets\"";
 				DEVELOPMENT_TEAM = 564B4ETY69;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -456,7 +520,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.tij.Raivo-MacOS";
 				PRODUCT_NAME = "Raivo OTP";
 				SKIP_INSTALL = NO;
@@ -488,6 +552,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		70024C9D26EA823D00DC398A /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bizz84/SwiftyStoreKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.16.3;
+			};
+		};
 		7092B99826C85AED00B10065 /* XCRemoteSwiftPackageReference "RNCryptor" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RNCryptor/RNCryptor";
@@ -531,6 +603,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		70024C9E26EA823D00DC398A /* SwiftyStoreKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70024C9D26EA823D00DC398A /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */;
+			productName = SwiftyStoreKit;
+		};
 		7092B99926C85AED00B10065 /* RNCryptor */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7092B99826C85AED00B10065 /* XCRemoteSwiftPackageReference "RNCryptor" */;

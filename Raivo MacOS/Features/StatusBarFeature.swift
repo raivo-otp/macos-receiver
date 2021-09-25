@@ -11,13 +11,15 @@
 //
 
 import Cocoa
+import SwiftUI
 import Preferences
 
 /// The available panes in the GUI of the app
 extension Preferences.PaneIdentifier {
-    static let general = Self("general")
-    static let scan = Self("scan")
-    static let help = Self("help")
+    static let welcome = Self("welcome")
+    static let settings = Self("settings")
+    static let linking = Self("linking")
+    static let support = Self("support")
 }
 
 /// The actual status bar app which has a menu, GUI and tab items
@@ -27,28 +29,36 @@ class StatusBarFeature: NSObject {
     lazy var preferencesWindowController = PreferencesWindowController(
         panes: [
             Preferences.Pane(
-                identifier: .general,
-                title: getAppDelegate().generalView.preferencePaneTitle,
+                identifier: .welcome,
+                title: getAppDelegate().welcomeView.preferencePaneTitle,
+                toolbarIcon: NSImage(named: "MenuIcon")!
+            ) {
+                getAppDelegate().welcomeView.accentColor(Color("color-tint-red"))
+            },
+            Preferences.Pane(
+                identifier: .settings,
+                title: getAppDelegate().settingsView.preferencePaneTitle,
                 toolbarIcon: NSImage(systemSymbolName: "gear", accessibilityDescription: "")!
             ) {
-                getAppDelegate().generalView
+                getAppDelegate().settingsView.accentColor(Color("color-tint-red"))
             },
             Preferences.Pane(
-                identifier: .scan,
-                title: getAppDelegate().scanView.preferencePaneTitle,
+                identifier: .linking,
+                title: getAppDelegate().linkingView.preferencePaneTitle,
                 toolbarIcon: NSImage(systemSymbolName: "qrcode", accessibilityDescription: "")!
             ) {
-                getAppDelegate().scanView
+                getAppDelegate().linkingView.accentColor(Color("color-tint-red"))
             },
             Preferences.Pane(
-                identifier: .help,
-                title: getAppDelegate().helpView.preferencePaneTitle,
+                identifier: .support,
+                title: getAppDelegate().supportView.preferencePaneTitle,
                 toolbarIcon: NSImage(systemSymbolName: "questionmark.circle", accessibilityDescription: "")!
             ) {
-                getAppDelegate().helpView
+                getAppDelegate().supportView.accentColor(Color("color-tint-red"))
             }
         ],
-        style: .segmentedControl
+        style: .segmentedControl,
+        animated: false
     )
     
     /// Initialize the status bar feature by setting the status root item (containing menu items) in the app delegate
@@ -77,7 +87,7 @@ class StatusBarFeature: NSObject {
     func getMenu() -> NSMenu {
         let menu = NSMenu()
 
-        menu.addItem(NSMenuItem(title: "Raivo OTP " + AppHelper.version, action: nil, keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Raivo OTP v\(AppHelper.version)", action: nil, keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
         
         #if DEBUG
@@ -86,13 +96,9 @@ class StatusBarFeature: NSObject {
         #endif
         
 
-        let preferencesItem = NSMenuItem(title: "Preferences", action: #selector(onPreferences), keyEquivalent: "p")
-        preferencesItem.target = self
-        menu.addItem(preferencesItem)
-
-        let aboutItem = NSMenuItem(title: "About", action: #selector(onAbout), keyEquivalent: "a")
-        aboutItem.target = self
-        menu.addItem(aboutItem)
+        let openItem = NSMenuItem(title: "Open", action: #selector(onOpen), keyEquivalent: "o")
+        openItem.target = self
+        menu.addItem(openItem)
 
         let quitItem = NSMenuItem(title: "Quit", action: #selector(onQuit), keyEquivalent: "q")
         quitItem.target = self
@@ -102,16 +108,8 @@ class StatusBarFeature: NSObject {
     }
     
     /// Called when a user clicks on the preferences menu item
-    @objc func onPreferences() {
+    @objc func onOpen() {
         preferencesWindowController.show()
-        getAppPrincipal().activate(ignoringOtherApps: true)
-    }
-    
-    /// Called when a user clicks on the about menu item
-    ///
-    /// - Note: This show's MacOS' standard about panel
-    @objc func onAbout() {
-        getAppPrincipal().orderFrontStandardAboutPanel(self)
         getAppPrincipal().activate(ignoringOtherApps: true)
     }
     
