@@ -15,18 +15,18 @@ import SwiftUI
 import Preferences
 import LaunchAtLogin
 
-/// A general tab view shown in the preferences window
+/// A tab view shown in the preferences window
 ///
 /// - Note: This contains general preferences, such as if the application should launch on boot
-struct GeneralView: View {
+struct SettingsView: View {
     
     /// The title of the tab
-    let preferencePaneTitle: String = "General"
+    let preferencePaneTitle: String = "Settings"
     
     /// The actual notification token for the app
     ///
     /// - Note: This is set only after the app registered for remote notifications and received a token
-    var token: String?
+    @ObservedObject var pushToken = ObservablePushToken()
     
     /// A boolean indicating if the clipboard should be cleared after x seconds
     @State var clearClipboardAfterDelay = StorageHelper.shared.getClearPasswordAfterDelay() {
@@ -40,18 +40,9 @@ struct GeneralView: View {
     
     /// Initialize the devices view.
     ///
-    /// - Parameter token: A mock token (only used during SwiftUI previews)
-    init(_ token: Data? = nil) {
-        if let token = token {
-            notifyAboutDeviceToken(token)
-        }
-    }
-    
-    /// Called when the app registered for remote notifications and received a token
-    ///
-    /// - Parameter token: The assigned notification token
-    mutating func notifyAboutDeviceToken(_ token: Data) {
-        self.token = token.toHexString()
+    /// - Parameter deviceToken: A mock token (only used during SwiftUI previews)
+    init(_ deviceToken: Data? = nil) {
+        pushToken.data = deviceToken
     }
     
     /// The actual view shown when someone clicks on the general tab
@@ -69,17 +60,23 @@ struct GeneralView: View {
                     }
                     Text("Automatically opens the app when you sign in to your Mac.").foregroundColor(.gray)
                 }
+//                VStack (alignment: .leading, spacing: 0) {
+//                    Toggle(isOn: clearClipboardAfterDelayBind) {
+//                        Text("Show icon in tab bar").padding(4)
+//                    }
+//                    Text("Uncheck to hide the app icon from your tab bar.").foregroundColor(.gray)
+//                }
                 VStack (alignment: .leading, spacing: 0) {
                     Toggle(isOn: clearClipboardAfterDelayBind) {
-                        Text("Play 30 seconds").padding(4)
+                        Text("Clear clipboard").padding(4)
                     }
                     Text("Clear received passwords from your clipboard after 30 seconds.").foregroundColor(.gray)
                 }
                 VStack (alignment: .leading, spacing: 0) {
                     Text("Push notification token").padding(.vertical, 4)
-                    Text(token ?? "Unknown...").foregroundColor(.gray).contextMenu {
+                    Text(pushToken.text ?? "Unknown...").foregroundColor(.gray).contextMenu {
                         Button(action: {
-                            ClipboardHelper.shared.set(token ?? "Unknown...")
+                            ClipboardHelper.shared.set(pushToken.text ?? "Unknown...")
                         }) {
                             Text("Copy")
                         }
@@ -94,10 +91,10 @@ struct GeneralView: View {
 }
 
 #if DEBUG
-struct GeneralView_Previews: PreviewProvider {
+struct SettingsView_Previews: PreviewProvider {
     
     static var previews: some View {
-        GeneralView()
+        SettingsView("This is a mocked push token".data(using: .utf8)!)
     }
     
 }
