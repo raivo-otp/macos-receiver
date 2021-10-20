@@ -107,22 +107,24 @@ struct TipJarView: View {
                     } else if products.tips.isEmpty {
                         ProgressView()
                     } else {
-                        ForEach(products.tips, id: \.self) { tip in
-                            VStack(alignment: .leading, spacing: 5) {
-                                Text("\(tip.localizedDescription) \(tip.localizedPrice ?? "")")
-                                Button(action: {
-                                    paymentInitiated = tip.productIdentifier
-                                    startPayment(tip)
-                                }, label: {
-                                    HStack {
-                                        if paymentInitiated == tip.productIdentifier {
-                                            ProgressView().scaleEffect(0.4)
-                                        } else {
-                                            Image(systemName: "creditcard")
-                                            Text(tip.localizedTitle)
+                        VStack(alignment: .leading, spacing: 15) {
+                            ForEach(products.tips, id: \.self) { tip in
+                                VStack(alignment: .leading, spacing: 5) {
+                                    Text("\(tip.localizedDescription) \(tip.localizedPrice ?? "")")
+                                    Button(action: {
+                                        paymentInitiated = tip.productIdentifier
+                                        startPayment(tip)
+                                    }, label: {
+                                        HStack {
+                                            if paymentInitiated == tip.productIdentifier {
+                                                ProgressView().scaleEffect(0.4)
+                                            } else {
+                                                Image(systemName: "creditcard")
+                                                Text(tip.localizedTitle)
+                                            }
                                         }
-                                    }
-                                }).disabled(paymentInitiated != nil)
+                                    }).disabled(paymentInitiated != nil)
+                                }
                             }
                         }
                     }

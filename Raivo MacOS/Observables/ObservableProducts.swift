@@ -28,12 +28,14 @@ class ObservableProducts: ObservableObject {
     
     /// Fetch all available tips
     func fetchTips() {
-        SwiftyStoreKit.retrieveProductsInfo(["tip.small"]) { result in
+        SwiftyStoreKit.retrieveProductsInfo(["tip.small", "tip.moderate", "tip.immense"]) { result in
             guard result.error == nil else {
                 return
             }
             
-            self.tips = Array(result.retrievedProducts)
+            self.tips = Array(result.retrievedProducts).sorted(by: { leftProduct, rightProduct in
+                leftProduct.price.decimalValue < rightProduct.price.decimalValue
+            })
         }
     }
    

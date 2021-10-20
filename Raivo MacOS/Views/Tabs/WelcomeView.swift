@@ -45,7 +45,7 @@ struct WelcomeView: View {
                     }
                     Button("Buy me a coffee") {
                         TipJarView().openInWindow(title: "Tip Jar", sender: self)
-                    }
+                    }.buttonStyle(MainButtonStyle())
                 }.padding(.vertical)
             }
             .padding()
