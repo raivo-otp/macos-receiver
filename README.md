@@ -8,7 +8,7 @@
 </p>
 <p align="center">
     <a href="https://github.com/raivo-otp/macos-receiver/blob/master/LICENSE.md"><img src="https://raw.finnwea.com/shield/?firstText=Source&secondText=Licensed" /></a>
-    <a href="https://itunes.apple.com/"><img src="https://raw.finnwea.com/shield/?firstText=Platform&secondText=MacOS%20(10.15%20or%20higher)" /></a>
+    <a href="https://itunes.apple.com/"><img src="https://raw.finnwea.com/shield/?firstText=Platform&secondText=MacOS%20(11%20or%20higher)" /></a>
     <a href="https://github.com/raivo-otp/macos-receiver/releases"><img src="https://raw.finnwea.com/vector-shields-v1/?typeKey=SemverVersion&typeValue1=raivo-otp&typeValue2=macos-receiver&typeValue4=Release&cache=4"></a>
     <br/>
     <b>A MacOS TabBar (StatusBar) application that securely receives one-time passwords that you tapped in Raivo for iOS</b>
