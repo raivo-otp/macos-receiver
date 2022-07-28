@@ -2,12 +2,12 @@
 
 > Effective date: August 17, 2021
 
-Raivo ("us", "we", or "our") operates the Raivo mobile application (the "Service").
+Tijme Gommers ("me", "i", "meyself", "The Author", "Author") operates the Raivo OTP marketing website (the "Service").
 
 The key words "must", "must not", "required", "shall", "shall not", "should", "should not", "recommended", "may" and "optional" in this document are to be interpreted as described in RFC 2119 [(Bradner, 1997)](https://www.ietf.org/rfc/rfc2119.txt).
 
----
+# Copyright Notice
 
-Copyright (c) 2021 Tijme Gommers. All rights reserved.
+Copyright ® 2022 Tijme Gommers. All rights reserved.
 
-The Service is provided 'as-is', without any express or implied warranty. **Modification, duplication or distribution of this Service (in source and binary forms) for any purpose is strictly prohibited.**
+The Service is provided "as-is", without any express or implied warranties. **Modification, duplication, and distribution of the "Service" (in source and/or binary formats) for any purposes and/or reasons is strictly prohibited without the explicit permission or consent from The Author.**
