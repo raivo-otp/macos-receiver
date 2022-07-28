@@ -1,6 +1,6 @@
 # License
 
-> Effective date: August 17, 2021
+> Effective date: August 17, 2021 (08M/17D/21Y)
 
 Tijme Gommers ("me", "i", "meyself", "The Author", "Author") operates the Raivo OTP mobile authenticator application (the "Service").
 
