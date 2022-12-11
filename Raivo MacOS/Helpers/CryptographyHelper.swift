@@ -37,7 +37,7 @@ class CryptographyHelper {
             throw CryptographyError.decryptionFailed("Cipher was not a valid base64 string")
         }
         
-        let proposedPassword = try! key ?? StorageHelper.shared.getDecryptionPassword()
+        let proposedPassword = try key ?? StorageHelper.shared.getDecryptionPassword()
         
         guard let password = proposedPassword else {
             throw CryptographyError.decryptionFailed("Encryption password unknown (not available in the keychain or as parameter)")
