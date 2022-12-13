@@ -499,7 +499,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"Raivo MacOS/Supporting/Development.xcassets\"";
 				DEVELOPMENT_TEAM = 564B4ETY69;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -511,7 +511,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.tij.Raivo-MacOS";
 				PRODUCT_NAME = "Raivo OTP";
 				SKIP_INSTALL = NO;
@@ -528,7 +528,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"Raivo MacOS/Supporting/Development.xcassets\"";
 				DEVELOPMENT_TEAM = 564B4ETY69;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -540,7 +540,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.tij.Raivo-MacOS";
 				PRODUCT_NAME = "Raivo OTP";
 				SKIP_INSTALL = NO;
@@ -577,7 +577,7 @@
 			repositoryURL = "https://github.com/bizz84/SwiftyStoreKit.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.16.3;
+				minimumVersion = 0.16.4;
 			};
 		};
 		7092B99826C85AED00B10065 /* XCRemoteSwiftPackageReference "RNCryptor" */ = {
@@ -593,7 +593,7 @@
 			repositoryURL = "https://github.com/Square/Valet";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.1.2;
+				minimumVersion = 4.1.3;
 			};
 		};
 		70C7F21826713A6E00A109AC /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
@@ -601,7 +601,7 @@
 			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.1.0;
+				minimumVersion = 5.0.0;
 			};
 		};
 		70C7F21B26713A9800A109AC /* XCRemoteSwiftPackageReference "EFQRCode" */ = {
@@ -609,7 +609,7 @@
 			repositoryURL = "https://github.com/EFPrefix/EFQRCode";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 6.1.0;
+				minimumVersion = 6.2.0;
 			};
 		};
 		70C7F21E26713AAB00A109AC /* XCRemoteSwiftPackageReference "Preferences" */ = {
@@ -617,7 +617,7 @@
 			repositoryURL = "https://github.com/sindresorhus/Preferences";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.3.0;
+				minimumVersion = 2.6.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

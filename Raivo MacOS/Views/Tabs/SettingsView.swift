@@ -60,12 +60,6 @@ struct SettingsView: View {
                     }
                     Text("Automatically opens the app when you sign in to your Mac.").foregroundColor(.gray)
                 }
-//                VStack (alignment: .leading, spacing: 0) {
-//                    Toggle(isOn: clearClipboardAfterDelayBind) {
-//                        Text("Show icon in tab bar").padding(4)
-//                    }
-//                    Text("Uncheck to hide the app icon from your tab bar.").foregroundColor(.gray)
-//                }
                 VStack (alignment: .leading, spacing: 0) {
                     Toggle(isOn: clearClipboardAfterDelayBind) {
                         Text("Clear clipboard").padding(4)

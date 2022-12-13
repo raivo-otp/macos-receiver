@@ -66,6 +66,8 @@ struct TipJarView: View {
                 default:
                     paymentError = (error as NSError).localizedDescription
                 }
+            case .deferred(purchase: let purchase):
+                paymentSucceeded = purchase.productId
             }
         }
     }

@@ -13,6 +13,7 @@
 import Cocoa
 import SwiftUI
 import Preferences
+import LaunchAtLogin
 import SwiftyStoreKit
 import UserNotifications
 
@@ -49,6 +50,8 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCe
     ///
     /// - Parameter notification: A notification named didFinishLaunchingNotification.
     func applicationDidFinishLaunching(_ notification: Notification) {
+        LaunchAtLogin.migrateIfNeeded()
+        
         statusBarFeature = StatusBarFeature()
         
         if StorageHelper.shared.getDecryptionPasswordIsPresent() == false {
@@ -71,7 +74,6 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCe
                         if purchase.needsFinishTransaction {
                             SwiftyStoreKit.finishTransaction(purchase.transaction)
                         }
-    //                case .failed, .purchasing, .deferred:
                     default:
                         break
                 }

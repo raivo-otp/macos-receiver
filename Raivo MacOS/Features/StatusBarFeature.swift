@@ -74,7 +74,7 @@ class StatusBarFeature: NSObject {
     func getStatusItem() -> NSStatusItem {
         let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
-        statusItem.button?.title = "Raivo"
+//        statusItem.button?.title = "Raivo"
         statusItem.button?.image = NSImage(named: "MenuIcon")
         statusItem.menu = getMenu()
         

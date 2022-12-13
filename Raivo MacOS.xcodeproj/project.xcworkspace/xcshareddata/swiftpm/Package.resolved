@@ -1,70 +1,68 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "EFQRCode",
-        "repositoryURL": "https://github.com/EFPrefix/EFQRCode",
-        "state": {
-          "branch": null,
-          "revision": "4a72d79f9cae6d2f189f768178cc8594b427c190",
-          "version": "6.1.0"
-        }
-      },
-      {
-        "package": "LaunchAtLogin",
-        "repositoryURL": "https://github.com/sindresorhus/LaunchAtLogin",
-        "state": {
-          "branch": null,
-          "revision": "6b16bcdf7d45a9d76a768a5c4912dde925cf0e95",
-          "version": "4.1.0"
-        }
-      },
-      {
-        "package": "Preferences",
-        "repositoryURL": "https://github.com/sindresorhus/Preferences",
-        "state": {
-          "branch": null,
-          "revision": "4dbcbdcc35d8d28e59fb63065d7c1a1b02289e51",
-          "version": "2.3.0"
-        }
-      },
-      {
-        "package": "RNCryptor",
-        "repositoryURL": "https://github.com/RNCryptor/RNCryptor",
-        "state": {
-          "branch": null,
-          "revision": "5e3bbf44f08bf90049537cb8902d8f4fa911a79a",
-          "version": "5.1.0"
-        }
-      },
-      {
-        "package": "swift_qrcodejs",
-        "repositoryURL": "https://github.com/ApolloZhu/swift_qrcodejs.git",
-        "state": {
-          "branch": null,
-          "revision": "374dc7f7b9e76c6aeb393f6a84590c6d387e1ecb",
-          "version": "2.2.2"
-        }
-      },
-      {
-        "package": "SwiftyStoreKit",
-        "repositoryURL": "https://github.com/bizz84/SwiftyStoreKit.git",
-        "state": {
-          "branch": null,
-          "revision": "3b54c8eac2840b0cdd576634e83d9ebeb70f847c",
-          "version": "0.16.3"
-        }
-      },
-      {
-        "package": "Valet",
-        "repositoryURL": "https://github.com/Square/Valet",
-        "state": {
-          "branch": null,
-          "revision": "2bf3329055f5d71d42a12801dd69d1d770fafa5e",
-          "version": "4.1.2"
-        }
+  "pins" : [
+    {
+      "identity" : "efqrcode",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/EFPrefix/EFQRCode",
+      "state" : {
+        "revision" : "bebbd09eaf28243ec576f6d53cbf9cc5b10eaffb",
+        "version" : "6.2.1"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "launchatlogin",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sindresorhus/LaunchAtLogin",
+      "state" : {
+        "revision" : "7ad6331f9c38953eb1ce8737758e18f7607e984a",
+        "version" : "5.0.0"
+      }
+    },
+    {
+      "identity" : "preferences",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sindresorhus/Preferences",
+      "state" : {
+        "revision" : "2651cd144615009242c994b087508fef99e9275c",
+        "version" : "2.6.0"
+      }
+    },
+    {
+      "identity" : "rncryptor",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/RNCryptor/RNCryptor",
+      "state" : {
+        "revision" : "5e3bbf44f08bf90049537cb8902d8f4fa911a79a",
+        "version" : "5.1.0"
+      }
+    },
+    {
+      "identity" : "swift_qrcodejs",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ApolloZhu/swift_qrcodejs.git",
+      "state" : {
+        "revision" : "374dc7f7b9e76c6aeb393f6a84590c6d387e1ecb",
+        "version" : "2.2.2"
+      }
+    },
+    {
+      "identity" : "swiftystorekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bizz84/SwiftyStoreKit.git",
+      "state" : {
+        "revision" : "9ce911639680113dac9b554d6243e406a9758ebe",
+        "version" : "0.16.4"
+      }
+    },
+    {
+      "identity" : "valet",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Square/Valet",
+      "state" : {
+        "revision" : "26689601804b0cc86ed212a6b137232c22210d28",
+        "version" : "4.1.3"
+      }
+    }
+  ],
+  "version" : 2
 }
