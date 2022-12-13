@@ -66,7 +66,7 @@ struct LinkingView: View {
             return nil
         }
 
-        guard let passwordRaw = try! StorageHelper.shared.getDecryptionPassword() else {
+        guard let passwordRaw = try? StorageHelper.shared.getDecryptionPassword() else {
             return nil
         }
 
