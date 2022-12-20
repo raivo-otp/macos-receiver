@@ -11,6 +11,7 @@
 //
 
 import Foundation
+import SwiftyBeaver
 
 /// A helper class for general application information
 class AppHelper {
@@ -30,4 +31,10 @@ class AppHelper {
     /// - Note Our version cannot be nil since it's hardcoded in the 'info.plist' file
     public static let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
  
+    /// The minimum level to log to the SwiftyBeaver destination
+    public static let logLevel = log.Level.verbose
+    
+    /// The path the the debug log file
+    public static let logFile = FileDestination().logFileURL?.deletingLastPathComponent().appendingPathComponent("raivo-debug-log.txt")
+    
 }

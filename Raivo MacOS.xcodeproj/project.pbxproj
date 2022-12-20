@@ -20,6 +20,7 @@
 		7069B43923E6E26F0045B0F3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43823E6E26F0045B0F3 /* SettingsView.swift */; };
 		7069B43B23E6E2790045B0F3 /* LinkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43A23E6E2790045B0F3 /* LinkingView.swift */; };
 		7069B43E23E6E39D0045B0F3 /* StatusBarFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B43D23E6E39D0045B0F3 /* StatusBarFeature.swift */; };
+		707DE8A8294A661900ADB0F5 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 707DE8A7294A661900ADB0F5 /* SwiftyBeaver */; };
 		7092B99726C85A9600B10065 /* CryptographyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7092B99626C85A9600B10065 /* CryptographyHelper.swift */; };
 		7092B99A26C85AED00B10065 /* RNCryptor in Frameworks */ = {isa = PBXBuildFile; productRef = 7092B99926C85AED00B10065 /* RNCryptor */; };
 		7092B99D26C85B1600B10065 /* CryptographyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7092B99C26C85B1600B10065 /* CryptographyError.swift */; };
@@ -30,6 +31,7 @@
 		70BEFE7526CC0DB60062151A /* Valet in Frameworks */ = {isa = PBXBuildFile; productRef = 70BEFE7426CC0DB60062151A /* Valet */; };
 		70BEFE7726CC0DCD0062151A /* StorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BEFE7626CC0DCD0062151A /* StorageHelper.swift */; };
 		70BEFE7A26CC24D80062151A /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BEFE7926CC24D80062151A /* AppHelper.swift */; };
+		70BF4827295221F300C18237 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF4826295221F300C18237 /* FileHelper.swift */; };
 		70C7F21A26713A6E00A109AC /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 70C7F21926713A6E00A109AC /* LaunchAtLogin */; };
 		70C7F21D26713A9800A109AC /* EFQRCode in Frameworks */ = {isa = PBXBuildFile; productRef = 70C7F21C26713A9800A109AC /* EFQRCode */; };
 		70C7F22026713AAB00A109AC /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = 70C7F21F26713AAB00A109AC /* Preferences */; };
@@ -63,6 +65,7 @@
 		70AF98BE26E94B60001B076D /* QuickResponseCodeBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickResponseCodeBackground.swift; sourceTree = "<group>"; };
 		70BEFE7626CC0DCD0062151A /* StorageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageHelper.swift; sourceTree = "<group>"; };
 		70BEFE7926CC24D80062151A /* AppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
+		70BF4826295221F300C18237 /* FileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
 		70C7F2212671412D00A109AC /* Development.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Development.xcassets; sourceTree = "<group>"; };
 		70DD2A6F23EC8E8E003DE95F /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 		70FF64FE23EDEE4A00B94593 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
@@ -81,6 +84,7 @@
 				70024C9C26EA7FA000DC398A /* StoreKit.framework in Frameworks */,
 				70C7F22026713AAB00A109AC /* Preferences in Frameworks */,
 				70C7F21D26713A9800A109AC /* EFQRCode in Frameworks */,
+				707DE8A8294A661900ADB0F5 /* SwiftyBeaver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +232,7 @@
 				7092B99626C85A9600B10065 /* CryptographyHelper.swift */,
 				70BEFE7626CC0DCD0062151A /* StorageHelper.swift */,
 				70BEFE7926CC24D80062151A /* AppHelper.swift */,
+				70BF4826295221F300C18237 /* FileHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 				7092B99926C85AED00B10065 /* RNCryptor */,
 				70BEFE7426CC0DB60062151A /* Valet */,
 				70024C9E26EA823D00DC398A /* SwiftyStoreKit */,
+				707DE8A7294A661900ADB0F5 /* SwiftyBeaver */,
 			);
 			productName = "Raivo MacOS";
 			productReference = 7069B41923E631BC0045B0F3 /* Raivo OTP.app */;
@@ -300,6 +306,7 @@
 				7092B99826C85AED00B10065 /* XCRemoteSwiftPackageReference "RNCryptor" */,
 				70BEFE7326CC0DB60062151A /* XCRemoteSwiftPackageReference "Valet" */,
 				70024C9D26EA823D00DC398A /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
+				707DE8A6294A661900ADB0F5 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
 			);
 			productRefGroup = 7069B41A23E631BC0045B0F3 /* Products */;
 			projectDirPath = "";
@@ -363,6 +370,7 @@
 				70DD2A7023EC8E8E003DE95F /* DataExtension.swift in Sources */,
 				7069B43B23E6E2790045B0F3 /* LinkingView.swift in Sources */,
 				70AF98B926E94019001B076D /* ObservablePushToken.swift in Sources */,
+				70BF4827295221F300C18237 /* FileHelper.swift in Sources */,
 				70AF98B626E939C7001B076D /* WelcomeView.swift in Sources */,
 				7096D95827025B2600CAACCC /* MainButtonStyle.swift in Sources */,
 				7069B43723E6E02B0045B0F3 /* ApplicationPrincipal.swift in Sources */,
@@ -499,7 +507,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_ASSET_PATHS = "\"Raivo MacOS/Supporting/Development.xcassets\"";
 				DEVELOPMENT_TEAM = 564B4ETY69;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -511,7 +519,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.tij.Raivo-MacOS";
 				PRODUCT_NAME = "Raivo OTP";
 				SKIP_INSTALL = NO;
@@ -528,7 +536,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_ASSET_PATHS = "\"Raivo MacOS/Supporting/Development.xcassets\"";
 				DEVELOPMENT_TEAM = 564B4ETY69;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -540,7 +548,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.tij.Raivo-MacOS";
 				PRODUCT_NAME = "Raivo OTP";
 				SKIP_INSTALL = NO;
@@ -578,6 +586,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 0.16.4;
+			};
+		};
+		707DE8A6294A661900ADB0F5 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.6;
 			};
 		};
 		7092B99826C85AED00B10065 /* XCRemoteSwiftPackageReference "RNCryptor" */ = {
@@ -627,6 +643,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 70024C9D26EA823D00DC398A /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */;
 			productName = SwiftyStoreKit;
+		};
+		707DE8A7294A661900ADB0F5 /* SwiftyBeaver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 707DE8A6294A661900ADB0F5 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
+			productName = SwiftyBeaver;
 		};
 		7092B99926C85AED00B10065 /* RNCryptor */ = {
 			isa = XCSwiftPackageProductDependency;

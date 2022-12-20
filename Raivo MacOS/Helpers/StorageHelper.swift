@@ -21,6 +21,7 @@ class StorageHelper {
         static let DECRYPTION_PASSWORD = "DecryptionPassword"
         static let DECRYPTION_PASSWORD_IS_PRESENT = "DecryptionPasswordIsPresent"
         static let CLEAR_CLIPBOARD_AFTER_DELAY = "ClearClipboardAfterDelay"
+        static let STORE_LOGS_ON_DISK = "StoreLogsOnDisk"
     }
     
     /// The singleton instance for the StorageHelper
@@ -93,6 +94,28 @@ class StorageHelper {
     /// - Returns: Positive if it should be cleared
     public func getClearPasswordAfterDelay() -> Bool {
         guard let resultString = try? settings().string(forKey: Key.CLEAR_CLIPBOARD_AFTER_DELAY) else {
+            return true
+        }
+        
+        guard let resultBool = Bool(resultString) else {
+            return true
+        }
+        
+        return resultBool
+    }
+    
+    /// Configure if debug logging should be stored on disk
+    ///
+    /// - Parameter doStore: Positive if they should be stored on disk
+    public func setStoreLogsOnDisk(_ doStore: Bool) throws {
+        return try settings().setString(String(doStore), forKey: Key.STORE_LOGS_ON_DISK)
+    }
+    
+    /// Check if debug logging should be stored on disk
+    ///
+    /// - Returns: Positive if it should be stored
+    public func getStoreLogsOnDisk() -> Bool {
+        guard let resultString = try? settings().string(forKey: Key.STORE_LOGS_ON_DISK) else {
             return true
         }
         

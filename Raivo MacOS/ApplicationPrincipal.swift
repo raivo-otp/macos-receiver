@@ -10,8 +10,14 @@
 // https://github.com/raivo-otp/macos-receiver/blob/master/LICENSE.md
 //
 
+import SwiftyBeaver
 import Foundation
 import AppKit
+
+/// Global reference to the SwiftyBeaver logging framework
+let log = SwiftyBeaver.self
+let logFileDestination = FileDestination()
+let logConsoleDestination = ConsoleDestination()
 
 /// Get the Application Principal (shared `UIApplication` class).
 ///
@@ -31,6 +37,8 @@ class ApplicationPrincipal: NSApplication {
         super.init()
         
         delegate = strongDelegate
+        
+        reInitializeLogging()
     }
 
     /// On initialize from a serialized object
@@ -38,6 +46,33 @@ class ApplicationPrincipal: NSApplication {
     /// - Parameter coder: An unarchiver object
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    /// Reinitialize all output logging channels, and use the enabled ones
+    func reInitializeLogging() {
+        log.removeDestination(logConsoleDestination)
+        initializeConsoleLogging()
+        
+        if StorageHelper.shared.getStoreLogsOnDisk() {
+            log.removeDestination(logFileDestination)
+            initializeFileLogging()
+        }
+    }
+    
+    /// Add the current console as a SwiftyBeaver logging destination
+    func initializeConsoleLogging() {
+        logConsoleDestination.minLevel = AppHelper.logLevel
+        log.addDestination(logConsoleDestination)
+        log.verbose("Console log destination initialized")
+    }
+    
+    /// Add the debug log file as a SwiftyBeaver logging destination
+    func initializeFileLogging() {
+        logFileDestination.minLevel = AppHelper.logLevel
+        logFileDestination.logFileURL = AppHelper.logFile
+        logFileDestination.format = "$Dyyyy-MM-dd HH:mm:ss$d$d $T $N.$F:$l $L: $M"
+        log.addDestination(logFileDestination)
+        log.verbose("File log destination initialized: " + (AppHelper.logFile?.absoluteString ?? "[unknown path]"))
     }
                 
 }

@@ -53,15 +53,18 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCe
         LaunchAtLogin.migrateIfNeeded()
         
         statusBarFeature = StatusBarFeature()
+        log.verbose("Status bar feature initialized.")
         
         if StorageHelper.shared.getDecryptionPasswordIsPresent() == false {
+            log.warning("Encryption password not set. Generating new encryption password.")
             try! StorageHelper.shared.setDecryptionPassword(CryptographyHelper.shared.getRandomDecryptionPassword())
+            log.verbose("Encryption password generated and stored.")
         }
         
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
             if !granted {
-                print(error?.localizedDescription ?? "Push notification authorization not granted")
+                log.error(error?.localizedDescription ?? "Push notification authorization not granted.")
             }
         }
         
@@ -72,6 +75,7 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCe
                 switch purchase.transaction.transactionState {
                     case .purchased, .restored:
                         if purchase.needsFinishTransaction {
+                            log.verbose("In-app purchase finishing 'purchased' or 'restored' transaction.")
                             SwiftyStoreKit.finishTransaction(purchase.transaction)
                         }
                     default:
@@ -88,6 +92,8 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCe
     func application(_ application: NSApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         settingsView.pushToken.data = deviceToken
         linkingView.pushToken.data = deviceToken
+        
+        log.verbose("Succesfully completed APNS registration process.")
     }
     
     /// Sent to the delegate when Apple Push Service cannot successfully complete the registration process.
@@ -95,7 +101,7 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCe
     /// - Parameter application: The application that initiated the remote-notification registration process.
     /// - Parameter error: An NSError object that encapsulates information why registration did not succeed. The application can display this information to the user.
     func application(_ application: NSApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        print(error)
+        log.error(error)
     }
     
     
@@ -105,6 +111,8 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCe
     /// - Parameter userInfo: A dictionary that contains information related to the remote notification, specifically a badge number for the application icon, a notification identifier, and possibly custom data.
     func application(_ application: NSApplication, didReceiveRemoteNotification userInfo: [String : Any]) {
         NotificationHelper.shared.notify(userInfo)
+        
+        log.verbose("Received a remote notification in the application delegate.")
     }
     
     /// Asks the delegate how to handle a notification that arrived while the app was running in the foreground.

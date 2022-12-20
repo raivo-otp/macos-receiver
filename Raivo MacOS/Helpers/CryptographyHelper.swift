@@ -34,12 +34,14 @@ class CryptographyHelper {
     ///         https://github.com/RNCryptor/RNCryptor-Spec/blob/master/RNCryptor-Spec-v3.md
     public func decrypt(_ cipher: String, withKey key: String? = nil) throws -> String {
         guard let cipherData = Data.init(base64Encoded: cipher) else {
+            log.error("Cipher was not a valid base64 string")
             throw CryptographyError.decryptionFailed("Cipher was not a valid base64 string")
         }
         
         let proposedPassword = try key ?? StorageHelper.shared.getDecryptionPassword()
         
         guard let password = proposedPassword else {
+            log.error("Encryption password unknown (not available in the keychain or as parameter)")
             throw CryptographyError.decryptionFailed("Encryption password unknown (not available in the keychain or as parameter)")
         }
         

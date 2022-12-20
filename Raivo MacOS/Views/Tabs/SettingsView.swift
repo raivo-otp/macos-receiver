@@ -34,6 +34,14 @@ struct SettingsView: View {
             try! StorageHelper.shared.setClearPasswordAfterDelay(clearClipboardAfterDelay)
         }
     }
+    
+    /// A boolean indicating if the clipboard should be cleared after x seconds
+    @State var storeLogsOnDisk = StorageHelper.shared.getStoreLogsOnDisk() {
+        didSet {
+            try! StorageHelper.shared.setStoreLogsOnDisk(storeLogsOnDisk)
+            getAppPrincipal().reInitializeLogging()
+        }
+    }
 
     /// A boolean indicating if the configure password sheet is currently shown or should be shown
     @State private var showingDecryptionPasswordSheet = false
@@ -52,6 +60,11 @@ struct SettingsView: View {
             set: { clearClipboardAfterDelay = $0 }
         )
         
+        let storeLogsOnDiskBind = Binding<Bool>(
+            get: { storeLogsOnDisk },
+            set: { storeLogsOnDisk = $0 }
+        )
+        
         VStack (alignment: .leading, spacing: 5) {
             VStack (alignment: .leading, spacing: 15) {
                 VStack (alignment: .leading, spacing: 0) {
@@ -65,6 +78,19 @@ struct SettingsView: View {
                         Text("Clear clipboard").padding(4)
                     }
                     Text("Clear received passwords from your clipboard after 30 seconds.").foregroundColor(.gray)
+                }
+                VStack (alignment: .leading, spacing: 0) {
+                    HStack(alignment: .bottom, spacing: 4) {
+                        Toggle(isOn: storeLogsOnDiskBind) {
+                            Text("Debug logging").padding(4)
+                        }
+                        if storeLogsOnDiskBind.wrappedValue, let file = AppHelper.logFile {
+                            Button("Show") {
+                                FileHelper.shared.openInFinder(file)
+                            }
+                        }
+                    }
+                    Text("Save debug logging to a file on disk.").foregroundColor(.gray)
                 }
                 VStack (alignment: .leading, spacing: 0) {
                     Text("Push notification token").padding(.vertical, 4)
