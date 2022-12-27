@@ -27,18 +27,27 @@ struct WelcomeView: View {
     /// The actual view shown when someone clicks on the support tab
     var body: some View {
         ZStack(alignment: .leading) {
-            HStack(alignment: .bottom) {
-                Image("image-welcome")
+            VStack(alignment: .leading, spacing: 0) {
+                HStack(alignment: .center, spacing: 0) {
+                    Image("image-titlebar-icon")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 45, height: 45, alignment: .center)
+                    Text("Menu bar app").opacity(0.5)
+                    Spacer()
+                }
+                Image("image-titlebar-dropdown")
                     .resizable()
                     .scaledToFit()
-                    .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
-                    .frame(width: 550, height: 225, alignment: .bottomLeading)
+                    .frame(width: 200, height: 150, alignment: .leading)
+                    .offset(x: -10, y: -15)
             }
-            .frame(width: 400, height: 250, alignment: .bottomLeading)
-            .offset(x: -35.0)
+            .frame(width: 175, height: 250, alignment: .center)
+            .offset(x: 50, y: 10)
+            .opacity(0.5)
             VStack (alignment: .leading, spacing: 5) {
-                Text("Welcome to Raivo OTP!").font(.largeTitle)
-                Text("This app copies all one-time passwords tapped in Raivo for iOS to your MacOS clipboard.")
+                Text("Welcome to Raivo").font(.largeTitle).bold()
+                Text("This menu bar app copies all one-time passwords tapped in Raivo for iOS to your MacOS clipboard.")
                 HStack {
                     Button("Get started") {
                         getAppDelegate().statusBarFeature?.preferencesWindowController.show(preferencePane: .linking)

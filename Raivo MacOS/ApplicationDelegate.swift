@@ -50,17 +50,24 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCe
     ///
     /// - Parameter notification: A notification named didFinishLaunchingNotification.
     func applicationDidFinishLaunching(_ notification: Notification) {
-        LaunchAtLogin.migrateIfNeeded()
+        log.verbose("Application did finish launching.")
         
+        // Migrate `LaunchAtLogin` module
+        LaunchAtLogin.migrateIfNeeded()
+        log.verbose("Migrating `LaunchAtLogin` module if needed.")
+        
+        // Initialise status bar
         statusBarFeature = StatusBarFeature()
         log.verbose("Status bar feature initialized.")
         
+        // Getting (and generating if needed) the decryption password
         if StorageHelper.shared.getDecryptionPasswordIsPresent() == false {
             log.warning("Encryption password not set. Generating new encryption password.")
             try! StorageHelper.shared.setDecryptionPassword(CryptographyHelper.shared.getRandomDecryptionPassword())
             log.verbose("Encryption password generated and stored.")
         }
         
+        // Listen for notifications, and request authorization
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
             if !granted {
@@ -68,8 +75,10 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCe
             }
         }
         
+        // Register for remote notifications
         getAppPrincipal().registerForRemoteNotifications()
         
+        // Register for transaction callbacks
         SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
             for purchase in purchases {
                 switch purchase.transaction.transactionState {
@@ -83,6 +92,13 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCe
                 }
             }
         }
+        
+        // If this is the first launch, open the welcome screen
+        if !StorageHelper.shared.getHasLaunchedBefore() {
+            try? StorageHelper.shared.setHasLaunchedBefore()
+            LaunchAtLogin.isEnabled = true
+            statusBarFeature?.onOpen()
+        }
     }
     
     /// Sent to the delegate when Apple Push Services successfully completes the registration process.
@@ -90,10 +106,10 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCe
     /// - Parameter application: The application that initiated the remote-notification registration process.
     /// - Parameter deviceToken: A token that identifies the device to Apple Push Notification Service (APNS).
     func application(_ application: NSApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        log.verbose("Successfully completed APNS registration process.")
+        
         settingsView.pushToken.data = deviceToken
         linkingView.pushToken.data = deviceToken
-        
-        log.verbose("Succesfully completed APNS registration process.")
     }
     
     /// Sent to the delegate when Apple Push Service cannot successfully complete the registration process.
@@ -110,9 +126,9 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCe
     /// - Parameter application: The application that received the remote notification.
     /// - Parameter userInfo: A dictionary that contains information related to the remote notification, specifically a badge number for the application icon, a notification identifier, and possibly custom data.
     func application(_ application: NSApplication, didReceiveRemoteNotification userInfo: [String : Any]) {
-        NotificationHelper.shared.notify(userInfo)
-        
         log.verbose("Received a remote notification in the application delegate.")
+        
+        NotificationHelper.shared.notify(userInfo)
     }
     
     /// Asks the delegate how to handle a notification that arrived while the app was running in the foreground.
@@ -120,7 +136,7 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCe
     /// - Parameter center: The shared user notification center object that received the notification.
     /// - Parameter notification: The notification that is about to be delivered. Use the information in this object to determine an appropriate course of action. For example, you might use the information to update your app’s interface.
     /// - Parameter completionHandler: The block to execute with the presentation option for the notification. Always execute this block at some point during your implementation of this method.
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {        
         completionHandler([.badge, .banner, .list, .sound])
     }
     

@@ -66,44 +66,46 @@ struct SettingsView: View {
         )
         
         VStack (alignment: .leading, spacing: 5) {
-            VStack (alignment: .leading, spacing: 15) {
-                VStack (alignment: .leading, spacing: 0) {
-                    LaunchAtLogin.Toggle {
-                        Text("Launch at login").padding(4)
-                    }
-                    Text("Automatically opens the app when you sign in to your Mac.").foregroundColor(.gray)
-                }
-                VStack (alignment: .leading, spacing: 0) {
-                    Toggle(isOn: clearClipboardAfterDelayBind) {
-                        Text("Clear clipboard").padding(4)
-                    }
-                    Text("Clear received passwords from your clipboard after 30 seconds.").foregroundColor(.gray)
-                }
-                VStack (alignment: .leading, spacing: 0) {
-                    HStack(alignment: .bottom, spacing: 4) {
-                        Toggle(isOn: storeLogsOnDiskBind) {
-                            Text("Debug logging").padding(4)
+            ScrollView {
+                VStack (alignment: .leading, spacing: 15) {
+                    VStack (alignment: .leading, spacing: 0) {
+                        LaunchAtLogin.Toggle {
+                            Text("Launch at login").padding(4)
                         }
-                        if storeLogsOnDiskBind.wrappedValue, let file = AppHelper.logFile {
-                            Button("Show") {
-                                FileHelper.shared.openInFinder(file)
+                        Text("Automatically opens the app when you sign in to your Mac.").foregroundColor(.gray)
+                    }
+                    VStack (alignment: .leading, spacing: 0) {
+                        Toggle(isOn: clearClipboardAfterDelayBind) {
+                            Text("Clear clipboard").padding(4)
+                        }
+                        Text("Clear received passwords from your clipboard after 30 seconds.").foregroundColor(.gray)
+                    }
+                    VStack (alignment: .leading, spacing: 0) {
+                        HStack(alignment: .bottom, spacing: 4) {
+                            Toggle(isOn: storeLogsOnDiskBind) {
+                                Text("Debug logging").padding(4)
+                            }
+                            if storeLogsOnDiskBind.wrappedValue, let file = AppHelper.logFile {
+                                Button("Show") {
+                                    FileHelper.shared.openInFinder(file)
+                                }
+                            }
+                        }
+                        Text("Save debug logging to a file on disk.").foregroundColor(.gray)
+                    }
+                    VStack (alignment: .leading, spacing: 0) {
+                        Text("Push notification token").padding(.vertical, 4)
+                        Text(pushToken.text ?? "Unknown...").foregroundColor(.gray).contextMenu {
+                            Button(action: {
+                                ClipboardHelper.shared.set(pushToken.text ?? "Unknown...")
+                            }) {
+                                Text("Copy")
                             }
                         }
                     }
-                    Text("Save debug logging to a file on disk.").foregroundColor(.gray)
                 }
-                VStack (alignment: .leading, spacing: 0) {
-                    Text("Push notification token").padding(.vertical, 4)
-                    Text(pushToken.text ?? "Unknown...").foregroundColor(.gray).contextMenu {
-                        Button(action: {
-                            ClipboardHelper.shared.set(pushToken.text ?? "Unknown...")
-                        }) {
-                            Text("Copy")
-                        }
-                    }
-                }
+                .padding()
             }
-            .padding()
         }
         .frame(minWidth: 550, minHeight: 250, alignment: .topLeading)
     }

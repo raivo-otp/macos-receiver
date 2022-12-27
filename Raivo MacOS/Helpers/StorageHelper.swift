@@ -22,6 +22,7 @@ class StorageHelper {
         static let DECRYPTION_PASSWORD_IS_PRESENT = "DecryptionPasswordIsPresent"
         static let CLEAR_CLIPBOARD_AFTER_DELAY = "ClearClipboardAfterDelay"
         static let STORE_LOGS_ON_DISK = "StoreLogsOnDisk"
+        static let HAS_LAUNCHED_BEFORE = "HasLaunchedBefore"
     }
     
     /// The singleton instance for the StorageHelper
@@ -86,14 +87,14 @@ class StorageHelper {
     ///
     /// - Parameter doClear: Positive if it should be cleared
     public func setClearPasswordAfterDelay(_ doClear: Bool) throws {
-        return try settings().setString(String(doClear), forKey: Key.CLEAR_CLIPBOARD_AFTER_DELAY)
+        return try globals().setString(String(doClear), forKey: Key.CLEAR_CLIPBOARD_AFTER_DELAY)
     }
     
     /// Check if the clipboard should be cleared after a certain delay
     ///
     /// - Returns: Positive if it should be cleared
     public func getClearPasswordAfterDelay() -> Bool {
-        guard let resultString = try? settings().string(forKey: Key.CLEAR_CLIPBOARD_AFTER_DELAY) else {
+        guard let resultString = try? globals().string(forKey: Key.CLEAR_CLIPBOARD_AFTER_DELAY) else {
             return true
         }
         
@@ -108,19 +109,39 @@ class StorageHelper {
     ///
     /// - Parameter doStore: Positive if they should be stored on disk
     public func setStoreLogsOnDisk(_ doStore: Bool) throws {
-        return try settings().setString(String(doStore), forKey: Key.STORE_LOGS_ON_DISK)
+        return try globals().setString(String(doStore), forKey: Key.STORE_LOGS_ON_DISK)
     }
     
     /// Check if debug logging should be stored on disk
     ///
     /// - Returns: Positive if it should be stored
     public func getStoreLogsOnDisk() -> Bool {
-        guard let resultString = try? settings().string(forKey: Key.STORE_LOGS_ON_DISK) else {
-            return true
+        guard let resultString = try? globals().string(forKey: Key.STORE_LOGS_ON_DISK) else {
+            return false
         }
         
         guard let resultBool = Bool(resultString) else {
-            return true
+            return false
+        }
+        
+        return resultBool
+    }
+    
+    /// Mark that the app has been launched before.
+    public func setHasLaunchedBefore() throws {
+        return try globals().setString(String(true), forKey: Key.HAS_LAUNCHED_BEFORE)
+    }
+    
+    /// Check if the app has been launched before, or if this is the first launch.
+    ///
+    /// - Returns: Positive if this is the first launch
+    public func getHasLaunchedBefore() -> Bool {
+        guard let resultString = try? globals().string(forKey: Key.HAS_LAUNCHED_BEFORE) else {
+            return false
+        }
+        
+        guard let resultBool = Bool(resultString) else {
+            return false
         }
         
         return resultBool

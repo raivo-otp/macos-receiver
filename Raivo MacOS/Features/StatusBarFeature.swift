@@ -36,18 +36,18 @@ class StatusBarFeature: NSObject {
                 getAppDelegate().welcomeView.accentColor(Color("color-tint-red"))
             },
             Preferences.Pane(
-                identifier: .settings,
-                title: getAppDelegate().settingsView.preferencePaneTitle,
-                toolbarIcon: NSImage(systemSymbolName: "gear", accessibilityDescription: "")!
-            ) {
-                getAppDelegate().settingsView.accentColor(Color("color-tint-red"))
-            },
-            Preferences.Pane(
                 identifier: .linking,
                 title: getAppDelegate().linkingView.preferencePaneTitle,
                 toolbarIcon: NSImage(systemSymbolName: "qrcode", accessibilityDescription: "")!
             ) {
                 getAppDelegate().linkingView.accentColor(Color("color-tint-red"))
+            },
+            Preferences.Pane(
+                identifier: .settings,
+                title: getAppDelegate().settingsView.preferencePaneTitle,
+                toolbarIcon: NSImage(systemSymbolName: "gear", accessibilityDescription: "")!
+            ) {
+                getAppDelegate().settingsView.accentColor(Color("color-tint-red"))
             },
             Preferences.Pane(
                 identifier: .support,
@@ -74,7 +74,6 @@ class StatusBarFeature: NSObject {
     func getStatusItem() -> NSStatusItem {
         let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
-//        statusItem.button?.title = "Raivo"
         statusItem.button?.image = NSImage(named: "MenuIcon")
         statusItem.menu = getMenu()
         
@@ -95,7 +94,6 @@ class StatusBarFeature: NSObject {
             menu.addItem(NSMenuItem.separator())
         #endif
         
-
         let openItem = NSMenuItem(title: "Open", action: #selector(onOpen), keyEquivalent: "o")
         openItem.target = self
         menu.addItem(openItem)

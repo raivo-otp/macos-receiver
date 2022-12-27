@@ -28,14 +28,14 @@ struct SupportView: View {
         VStack (alignment: .leading, spacing: 5) {
             VStack (alignment: .leading, spacing: 15) {
                 VStack (alignment: .leading, spacing: 0) {
-                    Text("How do I link my iOS and MacOS app?")
+                    Text("How do I link my iOS and MacOS app?").font(.headline)
                     Text("1. Open the iOS app and go to 'Settings'.").foregroundColor(.gray)
                     Text("2. Go to 'Receivers' and tap the plus icon.").foregroundColor(.gray)
                     Text("3. Scan the QR-code from the MacOS app.").foregroundColor(.gray)
                     Text("4. Your iOS and MacOS app are now linked.").foregroundColor(.gray)
                 }
                 VStack (alignment: .leading, spacing: 0) {
-                    Text("I'm not receiving notifications on my Mac!")
+                    Text("What should I do if notifications aren't working?").font(.headline)
                     Text("1. Open the iOS app and go to 'Settings'.").foregroundColor(.gray)
                     Text("2. Remove the existing link by swiping left.").foregroundColor(.gray)
                     Text("3. Relink the iOS and MacOS app.").foregroundColor(.gray)
