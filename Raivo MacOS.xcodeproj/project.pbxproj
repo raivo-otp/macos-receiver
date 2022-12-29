@@ -509,7 +509,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_ASSET_PATHS = "\"Raivo MacOS/Supporting/Development.xcassets\"";
 				DEVELOPMENT_TEAM = 564B4ETY69;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -522,8 +522,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.1.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.tij.Raivo-MacOS";
 				PRODUCT_NAME = "Raivo OTP";
 				SKIP_INSTALL = NO;
@@ -540,7 +540,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_ASSET_PATHS = "\"Raivo MacOS/Supporting/Development.xcassets\"";
 				DEVELOPMENT_TEAM = 564B4ETY69;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -553,8 +553,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.1.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.tij.Raivo-MacOS";
 				PRODUCT_NAME = "Raivo OTP";
 				SKIP_INSTALL = NO;

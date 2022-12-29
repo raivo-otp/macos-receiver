@@ -42,7 +42,7 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCe
 
     /// We need to keep a strong reference to the status bar to make sure it keeps working
     var statusBarFeature: StatusBarFeature?
-    
+        
     /// Our status item (menu bar item) that was generated using the status bar featured
     var statusItem: NSStatusItem?
     
@@ -96,7 +96,7 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCe
         // If this is the first launch, open the welcome screen
         if !StorageHelper.shared.getHasLaunchedBefore() {
             try? StorageHelper.shared.setHasLaunchedBefore()
-            LaunchAtLogin.isEnabled = true
+            self.welcomeView.showStartOnBootAlert = true
             statusBarFeature?.onOpen()
         }
     }
