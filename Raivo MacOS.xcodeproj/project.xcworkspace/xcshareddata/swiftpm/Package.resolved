@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/EFPrefix/EFQRCode",
       "state" : {
-        "revision" : "bebbd09eaf28243ec576f6d53cbf9cc5b10eaffb",
-        "version" : "6.2.1"
+        "revision" : "2991c2f318ad9529d93b2a73a382a3f9c72c64ce",
+        "version" : "6.2.2"
       }
     },
     {
@@ -19,21 +19,21 @@
       }
     },
     {
-      "identity" : "preferences",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/sindresorhus/Preferences",
-      "state" : {
-        "revision" : "2651cd144615009242c994b087508fef99e9275c",
-        "version" : "2.6.0"
-      }
-    },
-    {
       "identity" : "rncryptor",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/RNCryptor/RNCryptor",
       "state" : {
         "revision" : "5e3bbf44f08bf90049537cb8902d8f4fa911a79a",
         "version" : "5.1.0"
+      }
+    },
+    {
+      "identity" : "settings",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sindresorhus/Settings",
+      "state" : {
+        "revision" : "11e232f5f928ff9bf5260f40b6b40047ae37c9f2",
+        "version" : "3.0.2"
       }
     },
     {
@@ -50,8 +50,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SwiftyBeaver/SwiftyBeaver.git",
       "state" : {
-        "revision" : "12b5acf96d98f91d50de447369bd18df74600f1a",
-        "version" : "1.9.6"
+        "revision" : "1080914828ef1c9ca9cd2bad50667b3d847dabff",
+        "version" : "2.0.0"
       }
     },
     {
@@ -68,8 +68,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Square/Valet",
       "state" : {
-        "revision" : "26689601804b0cc86ed212a6b137232c22210d28",
-        "version" : "4.1.3"
+        "revision" : "89f12b93553055f4908c0d2548c9b8655926940a",
+        "version" : "4.2.0"
       }
     }
   ],

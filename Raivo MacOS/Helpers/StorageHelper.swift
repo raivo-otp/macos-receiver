@@ -129,6 +129,7 @@ class StorageHelper {
     
     /// Mark that the app has been launched before.
     public func setHasLaunchedBefore() throws {
+        log.verbose("Setting has launched before to true.")
         return try globals().setString(String(true), forKey: Key.HAS_LAUNCHED_BEFORE)
     }
     
@@ -137,10 +138,12 @@ class StorageHelper {
     /// - Returns: Positive if this is the first launch
     public func getHasLaunchedBefore() -> Bool {
         guard let resultString = try? globals().string(forKey: Key.HAS_LAUNCHED_BEFORE) else {
+            log.warning("Could not find 'HAS_LAUNCHED_BEFORE' key in globals.")
             return false
         }
         
         guard let resultBool = Bool(resultString) else {
+            log.error("Could not cast 'HAS_LAUNCHED_BEFORE' value to boolean.")
             return false
         }
         

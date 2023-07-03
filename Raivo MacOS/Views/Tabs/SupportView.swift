@@ -12,7 +12,7 @@
 
 import Cocoa
 import SwiftUI
-import Preferences
+import Settings
 import LaunchAtLogin
 
 /// A support tab view shown in the preferences window

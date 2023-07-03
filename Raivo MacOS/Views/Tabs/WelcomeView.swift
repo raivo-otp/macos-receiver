@@ -12,7 +12,7 @@
 
 import Cocoa
 import SwiftUI
-import Preferences
+import Settings
 import SwiftyStoreKit
 import LaunchAtLogin
 
@@ -25,7 +25,7 @@ struct WelcomeView: View {
     let preferencePaneTitle: String = "Welcome"
     
     /// Request start on boot alert
-    @State public var showStartOnBootAlert = true
+    @State public var showStartOnBootAlert = false
     
     /// The actual view shown when someone clicks on the support tab
     var body: some View {
@@ -53,7 +53,7 @@ struct WelcomeView: View {
                     Text("This menu bar app copies all one-time passwords tapped in Raivo for iOS to your MacOS clipboard.")
                     HStack {
                         Button("Get started") {
-                            getAppDelegate().statusBarFeature?.preferencesWindowController.show(preferencePane: .linking)
+                            getAppDelegate().statusBarFeature?.preferencesWindowController.show(pane: .linking)
                         }
                         Button("Buy me a coffee") {
                             TipJarView().openInWindow(title: "Tip Jar", sender: self)
@@ -65,7 +65,7 @@ struct WelcomeView: View {
                 .offset(x: +225)
             }
             .frame(width: 550, height: 250, alignment: .topLeading)
-            .alert("Would you like Raivo OTP to start on boot of MacOS?", isPresented: $showStartOnBootAlert) {
+            .alert("Would you like Raivo Receiver to start on boot of MacOS?", isPresented: $showStartOnBootAlert) {
                 Button("Yes", role: .none) {
                     LaunchAtLogin.isEnabled = true
                 }

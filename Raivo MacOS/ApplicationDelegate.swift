@@ -12,7 +12,7 @@
 
 import Cocoa
 import SwiftUI
-import Preferences
+import Settings
 import LaunchAtLogin
 import SwiftyStoreKit
 import UserNotifications
@@ -51,10 +51,6 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCe
     /// - Parameter notification: A notification named didFinishLaunchingNotification.
     func applicationDidFinishLaunching(_ notification: Notification) {
         log.verbose("Application did finish launching.")
-        
-        // Migrate `LaunchAtLogin` module
-        LaunchAtLogin.migrateIfNeeded()
-        log.verbose("Migrating `LaunchAtLogin` module if needed.")
         
         // Initialise status bar
         statusBarFeature = StatusBarFeature()
@@ -95,6 +91,7 @@ class ApplicationDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCe
         
         // If this is the first launch, open the welcome screen
         if !StorageHelper.shared.getHasLaunchedBefore() {
+            log.verbose("Did not launch before according to settings.")
             try? StorageHelper.shared.setHasLaunchedBefore()
             self.welcomeView.showStartOnBootAlert = true
             statusBarFeature?.onOpen()

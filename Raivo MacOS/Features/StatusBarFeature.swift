@@ -12,7 +12,7 @@
 
 import Cocoa
 import SwiftUI
-import Preferences
+import Settings
 
 /// The available panes in the GUI of the app
 extension Preferences.PaneIdentifier {
@@ -86,7 +86,7 @@ class StatusBarFeature: NSObject {
     func getMenu() -> NSMenu {
         let menu = NSMenu()
 
-        menu.addItem(NSMenuItem(title: "Raivo OTP v\(AppHelper.version)", action: nil, keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Raivo Receiver v\(AppHelper.version)", action: nil, keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
         
         #if DEBUG
