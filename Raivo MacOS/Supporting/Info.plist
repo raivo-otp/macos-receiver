@@ -29,7 +29,7 @@
 	<key>LSUIElement</key>
 	<true/>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2022 Tijme Gommers.</string>
+	<string>Copyright © 2023 Mobime.</string>
 	<key>NSPrincipalClass</key>
 	<string>$(PRODUCT_MODULE_NAME).ApplicationPrincipal</string>
 	<key>NSSupportsAutomaticTermination</key>

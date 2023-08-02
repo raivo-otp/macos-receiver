@@ -13,7 +13,7 @@
     <br/>
     <b>A MacOS TabBar (StatusBar) application that securely receives one-time passwords that you tapped in Raivo for iOS</b>
     <br/>
-    <sup>Raivo OTP is built by <a href="https://www.linkedin.com/in/tijme/">Tijme Gommers</a> – Buy me a coffee via <a href="https://www.paypal.me/tijmegommers">PayPal</a></sup>
+    <sup>Raivo OTP is built by <a href="https://mobime.org/">Mobime</a></sup>
     <br/>
 </p>
 

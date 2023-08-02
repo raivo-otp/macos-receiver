@@ -283,7 +283,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1250;
-				ORGANIZATIONNAME = "Tijme Gommers";
+				ORGANIZATIONNAME = "Mobime";
 				TargetAttributes = {
 					7069B41823E631BC0045B0F3 = {
 						CreatedOnToolsVersion = 11.3.1;

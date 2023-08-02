@@ -1,8 +1,7 @@
 //
-//
 // Raivo OTP
 //
-// Copyright (c) 2019 Tijme Gommers. All rights reserved. Raivo OTP
+// Copyright (c) 2023 Mobime. All rights reserved. Raivo OTP
 // is provided 'as-is', without any express or implied warranty.
 //
 // Modification, duplication or distribution of this software (in
@@ -92,7 +91,7 @@ struct TipJarView: View {
                             .scaledToFill()
                             .frame(width: 30.0, height: 30.0)
                         Text("That's very generous. Thank you!").foregroundColor(.secondary)
-                        Text("Regards, Tijme Gommers.").foregroundColor(.secondary)
+                        Text("Regards, Mobime.").foregroundColor(.secondary)
                         Button("Close Tip Jar") {
                             getAppPrincipal().keyWindow?.close()
                         }
